@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 html{
-    overflow: hidden;
+    overflow-x: hidden ;
 }
 body{
     overflow-x: hidden;
@@ -19,8 +19,8 @@ body{
     /* Nav */
     --nav-green: #53806A;
     --nav-links: #fff;
-
-    --lyserød-kasse: #FFA6B7;
+    --lyserød-kasse: #ffa6b692;
+    --lyserød-knap: #FFA6B7;
 }
 
 /* Navbar */
@@ -39,6 +39,16 @@ nav{
     background-color: #333;
 }
 /* Removes later */
+
+.nav_burgerbar_icon svg{
+    width: 40px;
+    height: 40px;
+    color: #fff;
+}
+.nav_burgerbar_icon svg path{
+    width: 40px;
+    height: 100%;
+}
 
 .Nav_links{
     display: flex;
@@ -63,14 +73,38 @@ nav{
 
 /* Forside */
 
+.forside_container{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
 
 .kasse{
-    display: flex;
+    padding: 15px;
+}
+
+.pink_background{
+    background: var(--lyserød-kasse)
     
 }
-.pink_baground{
-    background: var(--lyserød-kasse)
+
+.button_container{
+    padding: 50px;
+    text-align: center;
 }
+
+
+.button{
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+    border-radius: 6px;
+    color: black;
+    background-color: var(--lyserød-knap);
+}
+
+
+
 
 /* Forside */
 
