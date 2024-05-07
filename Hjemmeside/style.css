@@ -149,6 +149,22 @@ nav{
     }
     /* Logo */
 }
+
+    /* User journey */
+.progressbar{
+    top: 70px;
+    width: 100%;
+    height: 10px;
+    position: fixed;
+    transition: top 0.5s;
+  }
+  .filled{
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, rgb(72, 0, 255), rgb(0, 255, 204));
+  }
+  /* User journey */
+  
 /* Navbar */
 
 /* Forside */

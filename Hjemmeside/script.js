@@ -2,7 +2,9 @@
 let burgerbar = true;
 const navbar_icon = document.getElementById("navbar_icon");
 const nav_liste = document.getElementById("nav_liste");
-const navbar = document.getElementById("navbar")
+const navbar = document.getElementById("navbar");
+const progressbar = document.getElementById("progressbar");
+const progress = document.getElementById("progress")
 function chance_navbar(){
     if(burgerbar){
         //burgerbar is open
@@ -18,16 +20,21 @@ function chance_navbar(){
 }
 
 let oldScroll;
+let procent = 0;
 window.onscroll = function() {
     //hvis gemte scroll er højrer end nuværende scroll
     //scroll up
     if(oldScroll > scrollY){
         
         navbar.style.top = "0px";
+
+        progressbar.style.top = "70px";
     }
     //scroll down
     else{
         navbar.style.top = "-70px";
+
+        progressbar.style.top = "0px";
 
         if(!burgerbar){
             chance_navbar();
@@ -35,5 +42,18 @@ window.onscroll = function() {
     }
     
     oldScroll = scrollY;
+
+    // User journey progress bar, when scroll
+    procent = scrollY/document.body.scrollHeight * 100;
+
+    
+   
+  
+    console.log(procent)
+    console.log(document.body.scrollWidth)
+    
+   
+    
+    progress.style.width = procent + "%";
 }
 
