@@ -22,8 +22,8 @@ const progressbar = document.getElementById("progressbar");
 const progress = document.getElementById("progress")
 window.onscroll = function() {
     //hvis gemte scroll er højrer end nuværende scroll
-    //scroll up
-    if(oldScroll > scrollY){
+    //scroll up                bliver nede hvis du er i toppen
+    if(oldScroll > scrollY || scrollY < 60){
         
         navbar.style.top = "0px";
         progressbar.style.top = "69px";
@@ -32,11 +32,10 @@ window.onscroll = function() {
     else{
         navbar.style.top = "-70px";
         progressbar.style.top = "0px";
-
-        //lukker navbar hvis den er åben
-        if(!burgerbar){
-            chance_navbar();
-        }
+    }
+    //lukker navbar hvis den er åben
+    if(!burgerbar){
+        chance_navbar();
     }
     oldScroll = scrollY;
 
