@@ -44,12 +44,12 @@ window.onscroll = function() {
     oldScroll = scrollY;
 
     // User journey progress bar, when scroll
-    procent = scrollY/document.body.scrollHeight * 100;
 
-    
+  //  procent = scrollY/document.body.scrollHeight * 100;
+    const procent = (scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
    
-  
-    console.log(procent)
+    
+    console.log(window.innerHeight)
     console.log(document.body.scrollWidth)
     
    
