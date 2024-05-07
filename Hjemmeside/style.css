@@ -21,6 +21,7 @@ body{
     --nav-links: #fff;
     --nav-green-see-through: #53806acc;
     --nav-links-hover: #b2b2b2;
+    --nav-progress: linear-gradient(to right, rgb(72, 0, 255), rgb(0, 255, 204));
     /* Nav */
 
     --lyserød-kasse: #ffa6b692;
@@ -35,7 +36,7 @@ nav{
     justify-content: space-between;
     background: var(--nav-green);
     position: fixed;
-
+    top: 0px;
     transition: top 0.5s;
 }
 
@@ -157,11 +158,13 @@ nav{
     height: 10px;
     position: fixed;
     transition: top 0.5s;
+    background: var(--nav-green);
   }
   .filled{
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(to right, rgb(72, 0, 255), rgb(0, 255, 204));
+    background: var(--nav-progress);
+    transition: width 0.1s;
   }
   /* User journey */
   
