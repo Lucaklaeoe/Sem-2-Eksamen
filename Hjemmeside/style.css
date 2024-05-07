@@ -37,14 +37,17 @@ nav{
     position: fixed;
 }
 
-
-/* Removes later */
-#logo{
-    width: 50px;
+/* Logo */
+.logo_short{
+    position: relative;
     height: 50px;
-    background-color: #333;
+    width: 50px;
 }
-/* Removes later */
+.logo img{
+    height: 100%;
+    width: 100%;
+}
+/* Logo */
 
 /* icon */
 .nav_burgerbar_icon{
