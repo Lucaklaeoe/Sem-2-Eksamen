@@ -161,7 +161,7 @@ nav{
     background: var(--nav-green);
   }
   .filled{
-    width: 100%;
+    width: 0%;
     height: 100%;
     background: var(--nav-progress);
     transition: width 0.1s;
