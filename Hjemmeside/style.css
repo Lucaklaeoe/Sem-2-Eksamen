@@ -35,13 +35,17 @@ nav{
     justify-content: space-between;
     background: var(--nav-green);
     position: fixed;
+
+    transition: top 0.5s;
 }
 
 /* Logo */
-.logo_short{
+.logo{
+    z-index: 3;
     position: relative;
     height: 50px;
-    width: 50px;
+    width: 100px;
+    overflow: hidden;
 }
 .logo img{
     height: 100%;
@@ -105,6 +109,15 @@ nav{
 }
 
 @media screen and (min-width: 600px){
+    /* Logo */
+    .logo{
+        width: 50px;
+    }
+    .logo img{
+        width: 200%;
+    }
+    /* Logo */
+
     .nav_burgerbar_icon{
         display: none;
     }
@@ -125,6 +138,16 @@ nav{
         color: var(--nav-links-hover);
         transition: color 0.5s;
     }
+}
+@media screen and (min-width: 700px){
+    /* Logo */
+    .logo{
+        width: 100px;
+    }
+    .logo img{
+        width: 100%;
+    }
+    /* Logo */
 }
 /* Navbar */
 
