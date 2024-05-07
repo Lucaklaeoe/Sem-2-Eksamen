@@ -18,7 +18,6 @@ function chance_navbar(){
 }
 
 let oldScroll;
-let procent = 0;
 const progressbar = document.getElementById("progressbar");
 const progress = document.getElementById("progress")
 window.onscroll = function() {
@@ -42,6 +41,5 @@ window.onscroll = function() {
     oldScroll = scrollY;
 
     //User journey progress bar, when scroll
-    const procent = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-    progress.style.width = procent + "%";
+    progress.style.width = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + "%";
 }
