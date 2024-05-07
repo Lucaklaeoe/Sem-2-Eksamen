@@ -21,7 +21,8 @@ body{
     --nav-links: #fff;
     --nav-green-see-through: #53806acc;
     --nav-links-hover: #b2b2b2;
-    --nav-progress: linear-gradient(to right, rgb(72, 0, 255), rgb(0, 255, 204));
+    --nav-progress: linear-gradient(to right, #A1D3FF ,#A6FFD4);
+    --nav-progress-baground: hsl(151, 21%, 30%);
     /* Nav */
 
     --lyserød-kasse: #ffa6b692;
@@ -155,10 +156,10 @@ nav{
 .progressbar{
     top: 70px;
     width: 100%;
-    height: 10px;
+    height: 7px;
     position: fixed;
     transition: top 0.5s;
-    background: var(--nav-green);
+    background: var(--nav-progress-baground);
   }
   .filled{
     width: 0%;

@@ -26,7 +26,7 @@ window.onscroll = function() {
     if(oldScroll > scrollY){
         
         navbar.style.top = "0px";
-        progressbar.style.top = "70px";
+        progressbar.style.top = "69px";
     }
     //scroll down
     else{
