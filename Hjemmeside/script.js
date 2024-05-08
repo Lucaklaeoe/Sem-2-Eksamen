@@ -19,7 +19,8 @@ function chance_navbar(){
 
 let oldScroll;
 const progressbar = document.getElementById("progressbar");
-const progress = document.getElementById("progress")
+const progress = document.getElementById("progress");
+const arrow = document.getElementById("arrow");
 window.onscroll = function() {
     //hvis gemte scroll er højrer end nuværende scroll
     //scroll up                bliver nede hvis du er i toppen
@@ -41,4 +42,17 @@ window.onscroll = function() {
 
     //User journey progress bar, when scroll
     progress.style.width = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + "%";
+
+    //remove arrow
+    if(scrollY >= 500){
+        arrow.style.color = "#ffffff00";
+    };
+};
+
+function scrollPage() {
+    // Scroll down by 500 pixels, adjust as needed
+    window.scrollBy({
+        top: 600,
+        behavior: 'smooth'
+    });
 }
