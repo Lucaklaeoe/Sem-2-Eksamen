@@ -32,8 +32,12 @@ body{
     /* header */
 
     /* Main */
-    --baground-color: #FFA6B7;
+    --baground-color: rgba(255, 166, 182, 0.24);
     --main-text-color: #000;
+
+    /* Knapper */
+    --forklare-knap: #A1D3FF;
+    --forklare-knap-hover: hsl(208, 100%, 75%);
     /* Main */
 
 }
@@ -263,19 +267,117 @@ section{
     flex-wrap: wrap;
 }
 section img{
-    width: 100%;
+    width: fit-content;
     border-radius: 6px;
+    height: 100%;
 }
-section p{
-    color: var(--main-text-color);
+.main_text h2{
+    margin-bottom: 20px;
 }
+.main_lise{
+    padding-left: 20px;
+}
+.forklare_knapper{
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.forklare_knap{
+    background: var(--forklare-knap);
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 6px;
+    text-align: center;
+    transition: 0.5s;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.forklare_knap:hover{
+    background: var(--forklare-knap-hover);
+    margin-bottom: 5px;
+    margin-top: 0px;
+    transition: 0.5s;
+}
+
 .pink_background{
     background: var(--baground-color);
+}
+
+.guide{
+    width: 100%;
+    background: var(--baground-color);
+    display: flex;
+    flex-direction: column;
+}
+.guide_list{
+    padding-left: 20px;
+}
+.guide_img{
+    display: none;
+}
+@media screen and (min-width: 600px) {
+    section{
+        gap: 20px;
+        flex-wrap: nowrap;
+    }
+    section img{
+        flex-grow: 1;
+        width: 50%;
+    }
+    .main_text{
+        display: flex;
+        flex-direction: column;
+    }
+    .main_text h2, .main_text p{
+        height: fit-content;
+    }
+
+    .guide{
+        background: none;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: space-between;
+    }
+    .guide_img{
+        width: 20%;
+        position: relative;
+        border-radius: 6px;
+        display: flex;
+    }
+    .guide_img img{
+        width: 100%;
+    }
+    .guide_text{
+        width: 50%;
+        background: var(--baground-color);
+        padding: 10px;
+        border-radius: 6px;
+    }
+
+    .column_2{
+        column-count: 2;
+    }
+    .divide{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }
 
 /* Content */
 
 /* Stop */
+/* Mest for text */
+@media screen and (min-width: 1120px) {
+    .stop_early{
+        width: 1120px;
+        margin: 0 auto;
+        position: relative;
+        padding: 10px;
+    }
+}
+/* Genneral stop */
 @media screen and (min-width: 1920px) {
     .stop{
         width: 1920px;
