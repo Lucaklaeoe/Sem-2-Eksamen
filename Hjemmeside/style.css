@@ -257,128 +257,148 @@ header{
 main{
     height: fit-content;
     width: 100%;
+    color: var(--main-text-color);
 }
 section{
-    height: fit-content;
     width: 100%;
     padding: 10px;
-
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
 }
-section img{
+.images{
+    position: relative;
     width: 100%;
-    height: fit-content;
-    border-radius: 6px;
-    margin: 10px 0;
 }
-.main_text h2{
-    margin-bottom: 20px;
+.images img{
+    width: 100%;
+    border-radius: 6px;
 }
 .main_lise{
     padding-left: 20px;
 }
-.forklare_bund{
+.forklarings_knapper{
     display: flex;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-}
-.forklare_knapper{
-    display: flex;
-    justify-content: center;
+    justify-content: left;
     flex-wrap: wrap;
     gap: 20px;
 }
 .forklare_knap{
-    background: var(--forklare-knap);
-    padding: 10px;
-    font-weight: bold;
     border-radius: 6px;
-    text-align: center;
+    padding: 10px;
+    background: var(--forklare-knap);
     transition: 0.5s;
     cursor: pointer;
-    margin-top: 5px;
 }
 .forklare_knap:hover{
-    background: var(--forklare-knap-hover);
-    margin-bottom: 5px;
-    margin-top: 0px;
+    margin-top: 0;
     transition: 0.5s;
+    background: var(--forklare-knap-hover);
+}
+.forviret{
+    margin-top: 10px;
 }
 
-.pink_background{
-    background: var(--baground-color);
-}
-
+/* Guide */
 .guide{
-    width: 100%;
-    background: var(--baground-color);
+    display: flex;
+}
+.guide_text{
+    padding: 10px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
 }
 .guide_list{
     padding-left: 20px;
 }
-.guide_img{
+.guide_side_img, .guide_side_empty{
     display: none;
 }
-@media screen and (min-width: 700px) {
-    section{
-        gap: 20px;
-        flex-wrap: nowrap;
+.main_content{
+    margin-bottom: 10px;
+}
+/* Guide */
+
+.pink_bagrund{
+    background: var(--baground-color);
+}
+
+@media screen and (min-width: 700px){
+    /* Guide */
+    .guide{
+        margin-top: 10px;
     }
-    section img{
-        flex-grow: 1;
+    .guide_text{
+        border-radius: 6px;
+        width: 70%;
+    }
+    .guide_side_img{
+        display: flex;
+        justify-content: center;
+        width: 30%;
+        padding: 10px;
+
+    }
+    .guide_side_img img{
+        max-height: 242px;
+    }
+    /* Guide */
+
+    .forklare_knap{
+        margin-top: 10px;
+    }
+    .forklare_knap:hover{
+        margin-bottom: 10px;
+        margin-top: 0;
+    }
+    .divider{
+        display: flex;
+        gap: 20px;
+    }
+    .images{
+        width: 50%;
+    }
+    .main_content{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         width: 50%;
         margin: 0;
     }
-    .main_text{
-        display: flex;
-        flex-direction: column;
+    .main_text h2{
+        margin-bottom: 10px;
+        width: 75%;
     }
-    .main_text h2, .main_text p{
-        height: fit-content;
-    }
-
-    .guide{
-        background: none;
-        flex-direction: row;
-        gap: 10px;
-        justify-content: space-between;
-        position: relative;
-        align-items: center;
-    }
-    .guide_img{
-        width: 20%;
-        height: 100%;
-        position: relative;
-        border-radius: 6px;
-        display: flex;
-    }
-    .guide_img img{
-        max-height: 312px;
-        max-width: 156px;
-    }
-    .guide_text{
-        width: 50%;
-        background: var(--baground-color);
-        padding: 10px;
-        border-radius: 6px;
+    .forviret h3{
+        margin-bottom: 10px;
     }
 
     .column_2{
         column-count: 2;
     }
-    .divide{
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
 }
+@media screen and (min-width: 1024px){
+    .images{
+        width: 50%;
+    }
+    .main_content{
+        width: 50%;
+    }
+    .forviret h3{
+        text-align: center;
+    }
+    .forklarings_knapper{
+        justify-content: space-evenly;
+    }
 
+    /* Guide */
+    .guide_text{
+        width: 40%;
+    }
+    .guide_side_empty{
+        display: block;
+        width: 30%;
+    }
+    /* Guide */
+}
 /* Content */
 
 /* Stop */
