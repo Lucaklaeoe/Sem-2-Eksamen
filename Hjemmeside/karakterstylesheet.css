@@ -27,6 +27,63 @@ body{
     --lyserød-knap: #FFA6B7;
 }
 
+/* Karakter side */
+
+.karakter_indhold{
+    margin: 0;
+    padding: 0;
+
+}
+
+.karakter_indhold img{
+    width: 340px;
+    border-radius: 6px;
+}
+.pink_background{
+    background: var(--lyserød-kasse)
+}
+
+.icon_container{
+background: var(--lyserød-kasse);
+padding: 10px;
+} 
+
+.icon {
+    width: 100%; /* Make icons fill their grid cells */
+    max-width: 75px; /* Limit icon width */
+    height: auto; /* Maintain aspect ratio */
+    padding: 11px;
+    background-color: var(--nav-links);
+  }
+
+
+.button{
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+    border-radius: 6px;
+    color: black;
+    background-color: var(--lyserød-knap);
+}
+
+.button_container{
+    padding: 50px;
+    text-align: center;
+}
+
+.kasse{
+    border-radius: 6;
+    padding: 15px;
+}
+
+@media screen and (min-width: 500px) {
+
+
+    
+}
+
+/* karakter side */
+
 
 /* Footer */
 
