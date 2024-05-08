@@ -28,6 +28,7 @@ body{
     /* header */
     --header-text: #fff;
     --gradiant-overlay: linear-gradient(to right, #53806aa4 40%,#53806a00);
+    --arrow-color:#ffffffbf;
     /* header */
 
     /* Main */
@@ -48,6 +49,11 @@ nav{
     position: fixed;
     top: 0px;
     transition: top 0.5s;
+}
+.navbar_indhold{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* Logo */
@@ -186,20 +192,60 @@ header{
     z-index: 0;
     padding-top: 50px;
     width: 100%;
-    height: 600px;
+    height: 97vh;
     position: relative;
     background-color: var(--nav-green);
 }
 .headerimg{
     width: 100%;
     height: 100%;
-    padding: 30% 0 0 10px;
+    padding: 25vh 0 0 10px;
     background: var(--gradiant-overlay) ,url(img/Cover.png);
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
+}
+.headerimg div{
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 20px;
+}
+.headerimg div svg{
+    color: var(--arrow-color);
+    width: 50px;
+    transition: color 0.5s;
+
+    animation: jump 4s infinite;
 }
 .headerimg h1{
     color: var(--header-text);
+}
+
+@keyframes jump {
+    0%, 10%, 30%, 60%, 100% {
+      transform: translateY(0);
+    }
+  
+    20% {
+      transform: translateY(-20px);
+    }
+  
+    40% {
+      transform: translateY(-10px);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .headerimg{
+        background: var(--gradiant-overlay) ,url(img/cover_pc.webp);
+        background-size: cover;
+    }
+    .headerimg div svg{
+        width: 70px;
+    }
 }
 /* Header */
 
@@ -226,12 +272,16 @@ section p{
 .pink_background{
     background: var(--baground-color);
 }
+
 /* Content */
 
 /* Stop */
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1920px) {
     .stop{
-        width: 1440px;
+        width: 1920px;
         margin: 0 auto;
+    }
+    .stop_hight{
+        height: 80vh;
     }
 }
