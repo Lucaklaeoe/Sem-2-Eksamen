@@ -60,5 +60,6 @@ function scrollPage() {
  //tekst swap ved klasser herunder
 function swapText(elementId, newText) {
     document.getElementById(elementId).innerText = newText;
-      
+    //    Remove the onclick event listener after text is swapped
+    // event.target.removeAttribute('onclick');
           }
