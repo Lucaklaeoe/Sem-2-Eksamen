@@ -22,7 +22,7 @@ body{
     --nav-green-see-through: #53806acc;
     --nav-links-hover: #b2b2b2;
     --nav-progress: linear-gradient(to right, #A1D3FF ,#A6FFD4);
-    --nav-progress-baground: hsl(151, 21%, 30%);
+    --nav-progress-baground: #3c5d4d;
     /* Nav */
 
     /* header */
@@ -34,11 +34,20 @@ body{
     /* Main */
     --baground-color: rgba(255, 166, 182, 0.24);
     --main-text-color: #000;
+    /* Main */
 
     /* Knapper */
     --forklare-knap: #A1D3FF;
     --forklare-knap-hover: hsl(208, 100%, 75%);
-    /* Main */
+    --videre-knap: #ffa6b6;
+    --videre-knap-hover: hsl(349, 100%, 75%);
+    /* Knapper */
+
+    /* Footer */
+    --footer-green: #53806A;
+    --footer-credits: #3c5d4d;
+    --footer-color: #fff;
+    /* Footer */
 
 }
 
@@ -321,6 +330,27 @@ section{
     background: var(--baground-color);
 }
 
+/* videre Kanp */
+.knap{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+.knap a{
+    padding: 20px;
+    color: var(--main-text-color);
+    text-decoration: none;
+    background: var(--videre-knap);
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+.knap a:hover{
+    transition: 0.5s;
+    background: var(--videre-knap-hover);
+}
+/* videre Kanp */
+
 @media screen and (min-width: 700px){
     /* Guide */
     .guide{
@@ -376,6 +406,9 @@ section{
     }
 }
 @media screen and (min-width: 1024px){
+    .divider{
+        gap: 50px;
+    }
     .images{
         width: 50%;
     }
@@ -400,6 +433,60 @@ section{
     /* Guide */
 }
 /* Content */
+
+/* footer */
+footer{
+    width: 100%;
+    background: var(--footer-green);
+    color: var(--footer-color);
+}
+.footer_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 20px;
+}
+.SoMe_iconer{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.footer_kontakt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.footer_kontakt ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer_kontakt ul li img{
+    width: 20px;
+    margin-right: 10px;
+}
+.footer_content div{
+    width: 100%;
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    background: var(--footer-credits);
+    padding: 10px;
+}
+@media screen and (min-width: 700px){
+    .footer_content{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .footer_content div{
+        width: 50%;
+    }
+}
+/* footer */
 
 /* Stop */
 /* Mest for text */
