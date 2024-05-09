@@ -1,37 +1,13 @@
-*{
-    margin: 0;
-}
 
-:root{
-        
-       /* header */
-       --header-text: #fff;
-       --gradiant-overlay: linear-gradient(to right, #53806aa4 40%,#53806a00);
-       --arrow-color:#ffffffbf;
-       /* header */
-   
-       /* Main */
-       --baground-color: rgba(255, 166, 182, 0.24);
-       --main-text-color: #000;
-   
-       /* Knapper */
-       --forklare-knap: #A1D3FF;
-       --forklare-knap-hover: hsl(208, 100%, 75%);
-       /* Main */
-}
-
-
-.hvad_er_klasser{
-    /* display: flex; */
+/* .hvad_er_klasser{
     padding: 20px;
     background-color: var(--baground-color);
-    
-}
+} */
 
-.tekst{
+.karaktertekst{
     padding-bottom: 10px;
 }
-.klasser{
+/* .klasser{
     display: grid;
     gap: 10px;
     grid-template-areas: 
@@ -39,21 +15,18 @@
     "fighter monk paladin ranger"
     "rogue sorcerer warlock wizard"
     ;
-    
-
 }
 .ikon{
     background-color: #fff;
     border-radius: 6px;
     padding: 10px;
-    text-align: center;
-    
-}
+    text-align: center; 
+} */
 
-img{
+/* img{
     max-width: 100px;
     height: auto;
-} 
+}  */
 
 .race{
     padding: 20px;
