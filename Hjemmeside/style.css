@@ -419,7 +419,18 @@ section{
     .column_2{
         column-count: 2;
     }
+
+    /* footer */
+    .footer_content{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .footer_content div{
+        width: 50%;
+    }
+    /* footer */
 }
+
 @media screen and (min-width: 1024px){
     .divider{
         gap: 50px;
@@ -542,15 +553,6 @@ footer{
     justify-content: center;
     background: var(--footer-credits);
     padding: 10px;
-}
-@media screen and (min-width: 700px){
-    .footer_content{
-        flex-direction: row-reverse;
-        justify-content: space-between;
-    }
-    .footer_content div{
-        width: 50%;
-    }
 }
 /* footer */
 
