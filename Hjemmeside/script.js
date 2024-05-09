@@ -57,8 +57,7 @@ function scrollPage() {
     });
 }
 
- //tekst swap ved klasser herunder
+//tekst swap ved klasser herunder
 function swapText(elementId, newText) {
     document.getElementById(elementId).innerText = newText;
-      
-          }
+}
