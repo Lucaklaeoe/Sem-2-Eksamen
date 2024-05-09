@@ -56,3 +56,9 @@ function scrollPage() {
         behavior: 'smooth'
     });
 }
+
+ //tekst swap ved klasser herunder
+function swapText(elementId, newText) {
+    document.getElementById(elementId).innerText = newText;
+      
+          }
