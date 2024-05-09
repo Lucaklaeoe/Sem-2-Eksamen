@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="classes.css">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- Racer -->
+<div class="race">
+    <div class="racebilleder">
+        <img src="img/barbarian.svg" alt="">
+        <img src="img/barbarian.svg" alt="">
+        <img src="img/barbarian.svg" alt="">
+        <img src="img/barbarian.svg" alt="">
+        <img src="img/barbarian.svg" alt="">
+        <img src="img/barbarian.svg" alt="">
+        <img src="img/barbarian.svg" alt="">
+        <img src="img/barbarian.svg" alt="">
+        <img src="img/barbarian.svg" alt="">
+        <img src="img/barbarian.svg" alt="">
+    </div>
+    <h3>Racer</h3>
+    <div class="racetekst">
+        <p>Der er flere racer at vælge imellem når man skal bygge en karakter. Det gør ofte ikke den store forskel hvilken race man vælger. Vi har valgt de mest normale. Hvis du er tvivl - så spørg din DM om hvilke racer I spiller med.</p>
+    </div>
+</div>
+
+    <!-- hcad er klasser -->
+    <div class="hvad_er_klasser">
+     
+    <!-- klasse billeder + tekst swap -->
+<div class="klasser">
+    <div onclick="swapText('displayText', 'Barbarian')" style="cursor: pointer;" class="ikon barbarian"><a href="#"><img src="img/barbarian.svg" alt=""></a></div>
+    <div onclick="swapText('displayText', 'Bard')" style="cursor: pointer;" class="ikon bard"><a href="#"><img src="img/bard.svg" alt=""></a></div>
+    <div onclick="swapText('displayText', 'Cleric')" style="cursor: pointer;"class="ikon cleric"><a href="#"><img src="img/cleric.svg" alt=""></a></div>
+    
+    <div onclick="swapText('displayText', 'Druid')" style="cursor: pointer;" class="ikon druid"><a href="#"><img src="img/druid.svg" alt=""></a></div>
+    <div onclick="swapText('displayText', 'Fighter')" style="cursor: pointer;" class="ikon fighter"><a href="#"><img src="img/fighter.svg" alt=""></a></div>
+    <div onclick="swapText('displayText', 'Munk')" style="cursor: pointer;" class="ikon monk"><a href="#"><img src="img/monk.svg" alt=""></a></div>
+    
+    <div onclick="swapText('displayText', 'Paladin')" style="cursor: pointer;" class="ikon paladin "><a href="#"><img src="img/paladin.svg" alt=""></a></div>
+    <div onclick="swapText('displayText', 'Ranger')" style="cursor: pointer;" class="ikon ranger"><a href="#"><img src="img/ranger.svg" alt=""></a></div>
+    <div onclick="swapText('displayText', 'Rogue')" style="cursor: pointer;" class="ikon rogue"><a href="#"><img src="img/rogue.svg" alt=""></a></div>
+    
+    <div onclick="swapText('displayText', 'Sorcerer')" style="cursor: pointer;" class="ikon sorcerer"><a href="#"><img src="img/sorcerer.svg" alt=""></a></div>
+    <div onclick="swapText('displayText', 'Warlock')" style="cursor: pointer;" class="ikon warlock"><a href="#"><img src="img/warlock.svg" alt=""></a></div>
+    <div onclick="swapText('displayText', 'Troldmand')" style="cursor: pointer;"class="ikon wizard"><a href="#"><img src="img/wizard.svg" alt=""></a></div>
+</div>
+<!-- overskrift med tekst til klasser her -->
+    <div onclick="swapText('displayText', 'Det, der er vigtigst for din karakter, er hvilken klasse du vælger. En class er en slags arbejde, din karakter har. Din class bestemmer, hvilke evner du kan have. Det kan være alt fra at slå ekstra hårdt til være usynlig.')" style="cursor: pointer;"><h3 >Hvad er classes?</h3></div>
+    <div id="displayText" class= "tekst"><p>Det, der er vigtigst for din karakter, er hvilken "class" du vælger. En class er en slags arbejde, din karakter har. Din class bestemmer, hvilke evner du kan have. Det kan være alt fra at slå ekstra hårdt til være usynlig.</p></div>
+    </div>
+    <!--     -->
+
+    <div class="karakter_indhold">
+       
+        <div class="kasse pink_background">
+            <img src="img/placeholder-img.webp" width="400px" alt="">
+            <h4>Hvad er stats</h4>
+            <p>Stats i DnD, står for din karakters grundegenskaber. Der er seks stats i alt, som man kan dele stats op i to dele - fysiske og mentale stats. De Fysiske: styrke (strength), smidighed (dexterity) og Helbred (constitution) De mentale: intelligens (intelligence), visdom (wisdom) og karisma (charisma). </p>
+        </div>
+
+        <div class="kasse">
+            <img src="img/placeholder-img.webp" width="400px" alt="">
+            <p>sådan laver du dine stats</p>
+        </div>
+
+        <div class="kasse pink_background">
+            <img src="img/placeholder-img.webp" width="400px" alt="">
+            <h4>Amor og våben</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum dignissimos perferendis impedit cupiditate reiciendis voluptates aperiam explicabo quam architecto perspiciatis deserunt vel tempore iure aut at soluta, nobis iusto eveniet.</p>
+        </div>
+
+        <div class="kasse">
+            <img src="img/placeholder-img.webp" width="400px" alt="">
+            <h4>Magi og actions</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, consequatur. Magnam, nesciunt. Molestiae cupiditate ducimus qui, earum blanditiis distinctio nostrum.</p>
+            
+        </div>
+
+        <div class="button_container pink_background">
+            <a class="button" href="#"> Nu skal vi spille 
+            </a>
+        </div>
+    </div>
+
+
+    <script>
+        //tekst swapt js herunder
+function swapText(elementId, newText) {
+    document.getElementById(elementId).innerText = newText;
+    // Remove the onclick event listener after text is swapped
+    event.target.removeAttribute('onclick');
+  }
+  
+
+
+    </script>
+</body>
+</html>
