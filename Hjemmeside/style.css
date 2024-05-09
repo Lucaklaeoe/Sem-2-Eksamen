@@ -22,7 +22,7 @@ body{
     --nav-green-see-through: #53806acc;
     --nav-links-hover: #b2b2b2;
     --nav-progress: linear-gradient(to right, #A1D3FF ,#A6FFD4);
-    --nav-progress-baground: hsl(151, 21%, 30%);
+    --nav-progress-baground: #3c5d4d;
     /* Nav */
 
     /* header */
@@ -34,11 +34,20 @@ body{
     /* Main */
     --baground-color: rgba(255, 166, 182, 0.24);
     --main-text-color: #000;
+    /* Main */
 
     /* Knapper */
     --forklare-knap: #A1D3FF;
     --forklare-knap-hover: hsl(208, 100%, 75%);
-    /* Main */
+    --videre-knap: #ffa6b6;
+    --videre-knap-hover: hsl(349, 100%, 75%);
+    /* Knapper */
+
+    /* Footer */
+    --footer-green: #53806A;
+    --footer-credits: #3c5d4d;
+    --footer-color: #fff;
+    /* Footer */
 
 }
 
@@ -127,6 +136,121 @@ nav{
     color: var(--nav-links);
     text-decoration: none;
     transition: color 0.5s;
+}
+/* footer */
+footer{
+    padding: 15px;
+    background: var(--nav-green);
+    color: var(--nav-links);  
+}
+
+.footer_kontakt ul {
+    list-style-type: none; /* Fjerner default list style */
+    padding: 0;
+    margin: 13px 0;
+}
+
+.footer_kontakt ul li {
+   display: flex;   /*  iconer og text alignes  */
+    align-items: center; /* Align items vertically */
+    margin-bottom: 15px; /* Tilføjer space between each list item */ 
+}
+
+.footer_kontakt ul li img {
+    margin-right: 7px; /* Add space between the image and the text */
+}
+
+.footer_SoMe{
+    text-align: center;
+    padding: 0px;
+}
+
+.footer_SoMe img{
+    margin-top: 10px;
+    margin: 19px;
+}
+
+.copyright{
+    text-align: center;
+    font-size: small;
+    margin-top: 40px;
+}
+
+/* byg din karakter */
+.hvad_er_klasser{
+    padding: 20px;
+}
+
+.klasser{
+    display: grid;
+    gap: 10px;
+    grid-template-areas: 
+    "barbarian bard cleric druid"
+    "fighter monk paladin ranger"
+    "rogue sorcerer warlock wizard"
+    ;
+}
+.klasser img{
+    max-width: 100px;
+    height: auto;
+}
+.klasser .ikon{
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 10px;
+    text-align: center; 
+}
+.klasser .ikon:hover{
+    background-color:#ffa6b6;
+
+}
+
+.race{
+    padding: 85px 10px 5px 10px;
+}
+.racebilleder{
+    display: flex;
+    overflow:scroll;
+}
+.racebilleder{
+    display: flex;
+    overflow:scroll;
+}
+.racebilleder img{
+    max-width: 100px;
+    height: auto;
+} 
+.karakter_indhold .kasse{
+   padding: 20px;
+}
+.karakter_indhold p{
+    padding-bottom: 25px;
+}
+
+@media screen and (min-width: 500px) {
+   /* Footer */
+    footer{
+        display: grid;   
+       grid-template-areas: 
+       "footer_kontakt . footer_SoMe"
+       ". copyright .";
+    }
+
+    .footer_kontakt {
+      grid-area: footer_kontakt;
+      margin: 20px;
+    }
+  
+    .footer_SoMe {
+      grid-area: footer_SoMe;
+      margin-top: 10px;
+      padding: 0;
+    }
+
+    .copyright{
+        grid-area: copyright;
+        margin-top: -10px;
+    }
 }
 
 @media screen and (min-width: 600px){
@@ -295,6 +419,21 @@ section{
 .forviret{
     margin-top: 10px;
 }
+.videre_knap{
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 6px;
+    background: var(--videre-knap) ;
+    transition: 0.5s;
+    cursor: pointer;
+    margin-bottom: 7px;
+}
+.videre{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
 
 /* Guide */
 .guide{
@@ -320,6 +459,27 @@ section{
 .pink_bagrund{
     background: var(--baground-color);
 }
+
+/* videre Kanp */
+.knap{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+}
+.knap a{
+    padding: 20px;
+    color: var(--main-text-color);
+    text-decoration: none;
+    background: var(--videre-knap);
+    border-radius: 6px;
+    font-weight: 600;
+    transition: 0.5s;
+}
+.knap a:hover{
+    transition: 0.5s;
+    background: var(--videre-knap-hover);
+}
+/* videre Kanp */
 
 @media screen and (min-width: 700px){
     /* Guide */
@@ -376,6 +536,9 @@ section{
     }
 }
 @media screen and (min-width: 1024px){
+    .divider{
+        gap: 50px;
+    }
     .images{
         width: 50%;
     }
@@ -400,6 +563,60 @@ section{
     /* Guide */
 }
 /* Content */
+
+/* footer */
+footer{
+    width: 100%;
+    background: var(--footer-green);
+    color: var(--footer-color);
+}
+.footer_content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    gap: 20px;
+}
+.SoMe_iconer{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.footer_kontakt{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.footer_kontakt ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.footer_kontakt ul li img{
+    width: 20px;
+    margin-right: 10px;
+}
+.footer_content div{
+    width: 100%;
+}
+.copyright{
+    display: flex;
+    justify-content: center;
+    background: var(--footer-credits);
+    padding: 10px;
+}
+@media screen and (min-width: 700px){
+    .footer_content{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    .footer_content div{
+        width: 50%;
+    }
+}
+/* footer */
 
 /* Stop */
 /* Mest for text */
