@@ -50,7 +50,6 @@ window.onscroll = function() {
 };
 
 function scrollPage() {
-    // Scroll down by 500 pixels, adjust as needed
     window.scrollBy({
         top: 600,
         behavior: 'smooth'
@@ -58,8 +57,8 @@ function scrollPage() {
 }
 
  //tekst swap ved klasser herunder
-function swapText(elementId, newText) {
-    document.getElementById(elementId).innerText = newText;
+function swapText(newText) {
+    document.getElementById("displayText").innerText = newText;
     //    Remove the onclick event listener after text is swapped
     // event.target.removeAttribute('onclick');
           }
