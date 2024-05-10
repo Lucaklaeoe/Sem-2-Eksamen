@@ -56,17 +56,13 @@ function scrollPage() {
     });
 }
 
-
-var tekst = document.getElementById("class_tekst");
-var overskrift = document.getElementById("class_overskrift");
+//kode til klasse beskrivelse
+const tekst = document.getElementById("class_tekst");
+const overskrift = document.getElementById("class_overskrift");
 var oldtext;
  //tekst swap ved klasser herunder
 function swapText(newText) {
-    //document.getElementById("displayText").innerText = newText;
-    //    Remove the onclick event listener after text is swapped
-    // event.target.removeAttribute('onclick');
-    document.getElementById(newText).classList += " active";
-
+    //ændrer tekst
     if (newText == oldtext){
         overskrift.innerText="Hvad er classes?";
         tekst.innerText="Det, der er vigtigst for din karakter, er hvilken klasser du vælger. En class er en slags arbejde, din karakter har. Din class bestemmer, hvilke evner du kan have. Det kan være alt fra at slå ekstra hårdt til være usynlig."; 
@@ -85,17 +81,17 @@ function swapText(newText) {
         tekst.innerText="klasse "; 
     };
 
-
+    //tilføjer aktiv + fjerner aktiv
+    document.getElementById(newText).classList += " active";
     if(oldtext){
         document.getElementById(oldtext).classList = "ikon " + oldtext;
     }
 
+    // gemmer original id
     if (newText != oldtext){
         oldtext = newText;
     } 
     else{
         oldtext = null;
     }
-
-    
 }
