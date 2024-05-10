@@ -468,9 +468,9 @@ section{
     display: grid;
     gap: 10px;
     grid-template-areas: 
-    "barbarian bard cleric druid"
-    "fighter monk paladin ranger"
-    "rogue sorcerer warlock wizard"
+    "Barbarian Bard Cleric Druid"
+    "Fighter Monk Paladin Ranger"
+    "rogue Sorcerer Warlock Wizard"
     ;
 }
 .klasser img{
@@ -482,9 +482,13 @@ section{
     border-radius: 6px;
     padding: 10px;
     text-align: center; 
+    cursor: pointer;
 }
 .klasser .ikon:hover{
     background-color:#ffa6b6;
+}
+.active{
+    background-color: violet !important;
 }
 
 .race{
