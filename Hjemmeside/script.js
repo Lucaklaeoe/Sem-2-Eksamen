@@ -71,8 +71,8 @@ function swapText(newText) {
         overskrift.innerText="Hvad er classes?";
         tekst.innerText="Det, der er vigtigst for din karakter, er hvilken klasser du vælger. En class er en slags arbejde, din karakter har. Din class bestemmer, hvilke evner du kan have. Det kan være alt fra at slå ekstra hårdt til være usynlig."; 
     }
-    else if(newText== "reset"){
-        overskrift.innerText="Hvad er classes?";
+    else if(newText == "reset"){
+        overskrift.innerText = "Hvad er classes?";
         tekst.innerText="Det, der er vigtigst for din karakter, er hvilken klasser du vælger. En class er en slags arbejde, din karakter har. Din class bestemmer, hvilke evner du kan have. Det kan være alt fra at slå ekstra hårdt til være usynlig."; 
     
     }
@@ -86,17 +86,15 @@ function swapText(newText) {
     };
 
 
-    
-    document.getElementById(oldtext).classList -= " active";
-
+    if(oldtext){
+        document.getElementById(oldtext).classList = "ikon " + oldtext;
+    }
 
     if (newText != oldtext){
-        
-        oldtext=newText;
-        alert(oldtext)
+        oldtext = newText;
     } 
     else{
-        oldtext=null;
+        oldtext = null;
     }
 
     
