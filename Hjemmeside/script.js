@@ -45,6 +45,7 @@ window.onscroll = function() {
 
     //remove arrow
     if(scrollY >= 500){
+        //ændre farve istedet for display for at lave det smooth
         arrow.style.color = "#ffffff00";
     };
 };
