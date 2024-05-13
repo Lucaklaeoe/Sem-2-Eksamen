@@ -21,7 +21,7 @@ body{
     --nav-links: #fff;
     --nav-green-see-through: #53806acc;
     --nav-links-hover: #b2b2b2;
-    --nav-progress: linear-gradient(to right, #A1D3FF ,#A6FFD4);
+    --nav-progress: linear-gradient(to right, #A1D3FF, #A6FFD4);
     --nav-progress-baground: #3c5d4d;
     /* Nav */
 
@@ -38,9 +38,9 @@ body{
 
     /* Knapper */
     --forklare-knap: #A1D3FF;
-    --forklare-knap-hover: hsl(208, 100%, 75%);
+    --forklare-knap-hover: #A1D3FF;
     --videre-knap: #ffa6b6;
-    --videre-knap-hover: hsl(349, 100%, 75%);
+    --videre-knap-hover: #ffa8b8;
     /* Knapper */
 
     /* Footer */
