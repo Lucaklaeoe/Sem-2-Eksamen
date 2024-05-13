@@ -51,7 +51,7 @@ body{
 
 }
 
-/* Navbar */
+/* Navbar Start*/
 nav{
     z-index: 1;
     width: 100%;
@@ -180,7 +180,7 @@ nav{
     /* Logo */
 }
 
-/* User journey */
+/* User journey Start*/
 .progressbar{
     z-index: 1;
     top: 70px;
@@ -196,11 +196,11 @@ nav{
     background: var(--nav-progress);
     transition: width 0.1s;
 }
-/* User journey */
+/* User journey Slut*/
   
-/* Navbar */
+/* Navbar Slut*/
 
-/* Header */
+/* Header Start*/
 header{
     z-index: 0;
     padding-top: 50px;
@@ -260,9 +260,9 @@ header{
         width: 70px;
     }
 }
-/* Header */
+/* Header Slut */
 
-/* Content */
+/* Content Start*/
 main{
     height: fit-content;
     width: 100%;
@@ -459,7 +459,7 @@ section{
     /* Guide */
 }
 
-/* byg din karakter */
+/* byg din karakter Start*/
 .hvad_er_klasser{
     padding: 20px;
 }
@@ -468,9 +468,9 @@ section{
     display: grid;
     gap: 10px;
     grid-template-areas: 
-    "barbarian bard cleric druid"
-    "fighter monk paladin ranger"
-    "rogue sorcerer warlock wizard"
+    "Barbarian Bard Cleric Druid"
+    "Fighter Monk Paladin Ranger"
+    "rogue Sorcerer Warlock Wizard"
     ;
 }
 .klasser img{
@@ -482,9 +482,15 @@ section{
     border-radius: 6px;
     padding: 10px;
     text-align: center; 
+    cursor: pointer;
+    transition: 0.5s;
 }
 .klasser .ikon:hover{
     background-color:#ffa6b6;
+}
+
+.active{
+    background-color: violet !important;
 }
 
 .race{
@@ -509,9 +515,9 @@ section{
     padding-bottom: 25px;
 }
 /* byg din karakter */
-/* Content */
+/* Content SLut*/
 
-/* footer */
+/* footer Start*/
 footer{
     width: 100%;
     background: var(--footer-green);
