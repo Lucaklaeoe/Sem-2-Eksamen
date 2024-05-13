@@ -50,16 +50,48 @@ window.onscroll = function() {
 };
 
 function scrollPage() {
-    // Scroll down by 500 pixels, adjust as needed
     window.scrollBy({
         top: 600,
         behavior: 'smooth'
     });
 }
 
+//kode til klasse beskrivelse
+const tekst = document.getElementById("class_tekst");
+const overskrift = document.getElementById("class_overskrift");
+var oldtext;
  //tekst swap ved klasser herunder
-function swapText(elementId, newText) {
-    document.getElementById(elementId).innerText = newText;
-    //    Remove the onclick event listener after text is swapped
-    // event.target.removeAttribute('onclick');
-          }
+function swapText(newText) {
+    //ændrer tekst
+    if (newText == oldtext){
+        overskrift.innerText="Hvad er classes?";
+        tekst.innerText="Det, der er vigtigst for din karakter, er hvilken klasser du vælger. En class er en slags arbejde, din karakter har. Din class bestemmer, hvilke evner du kan have. Det kan være alt fra at slå ekstra hårdt til være usynlig."; 
+    }
+    else if(newText == "reset"){
+        overskrift.innerText = "Hvad er classes?";
+        tekst.innerText="Det, der er vigtigst for din karakter, er hvilken klasser du vælger. En class er en slags arbejde, din karakter har. Din class bestemmer, hvilke evner du kan have. Det kan være alt fra at slå ekstra hårdt til være usynlig."; 
+    
+    }
+    else if (newText == "Barbarian") {
+        overskrift.innerText="Barbarian";
+        tekst.innerText="klasse blob"; 
+    }
+    else if (newText == "Bard") {
+        overskrift.innerText="Bard";
+        tekst.innerText="klasse "; 
+    };
+
+    //tilføjer aktiv + fjerner aktiv
+    document.getElementById(newText).classList += " active";
+    if(oldtext){
+        document.getElementById(oldtext).classList = "ikon " + oldtext;
+    }
+
+    // gemmer original id
+    if (newText != oldtext){
+        oldtext = newText;
+    } 
+    else{
+        oldtext = null;
+    }
+}
