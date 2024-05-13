@@ -36,6 +36,14 @@ body{
     --main-text-color: #000;
     /* Main */
 
+    /* Kontakt */
+    --kontakt-bagrund: #53806A;
+    --kontakt-text-color: #fff;
+    --kontakt-baground-some: #80535B;
+    --kontakt-placeholder-form-text-color: #313131;
+    --kontakt-submit-button: #FFA6B7;
+    /* Kontakt */
+
     /* Knapper */
     --forklare-knap: #A1D3FF;
     --forklare-knap-hover: #A1D3FF;
@@ -208,6 +216,7 @@ header{
     height: 97vh;
     position: relative;
     background-color: var(--nav-green);
+    color: var(--header-text);
 }
 .headerimg{
     width: 100%;
@@ -233,8 +242,13 @@ header{
 
     animation: jump 4s infinite;
 }
-.headerimg h1{
-    color: var(--header-text);
+
+.header_underside{
+    padding: 20vh 0 0 10px;
+    background: var(--gradiant-overlay) ,url(img/Cover.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 40vh;
 }
 
 @keyframes jump {
@@ -252,7 +266,7 @@ header{
 }
 
 @media screen and (min-width: 600px) {
-    .headerimg{
+    .headerimg, .header_underside{
         background: var(--gradiant-overlay) ,url(img/cover_pc.webp);
         background-size: cover;
     }
@@ -419,16 +433,6 @@ section{
     .column_2{
         column-count: 2;
     }
-
-    /* footer */
-    .footer_content{
-        flex-direction: row-reverse;
-        justify-content: space-between;
-    }
-    .footer_content div{
-        width: 50%;
-    }
-    /* footer */
 }
 
 @media screen and (min-width: 1024px){
@@ -515,6 +519,92 @@ section{
     padding-bottom: 25px;
 }
 /* byg din karakter */
+
+/* Kontakt */
+.kontaktside{
+    height: fit-content;
+    background: var(--kontakt-bagrund);
+    color: var(--kontakt-text-color);
+    padding: 10px 0;
+}
+.kontaktside div{
+    display: flex;
+    justify-content: space-evenly;
+}
+.SoMe_iconer_kontaktside_top a img, .kontaktside_icon a img{
+    width: 50px;
+}
+.formel{
+    padding: 100px 10%;
+    flex-direction: column;
+}
+.formel form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+.formel form input, .formel form textarea{
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    border-radius: 6px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.formel form textarea{
+    height: 100px;
+}
+.formel form input::placeholder, .formel form textarea::placeholder, .formel form label::placeholder{
+    color: var(--kontakt-placeholder-form-text-color);
+}
+.formel form label{
+    font-weight: 600;
+    font-size: 1.2em
+}
+.kontaktside{
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.submit{
+    /* Virker ikke uden important, har prøvet at rykke den ned */
+    width: 100px !important;
+    background-color: var(--kontakt-submit-button);
+    font-weight: 600;
+    cursor: pointer;
+}
+.SoMe_iconer_kontaktside_bund{
+    flex-direction: column;
+    gap: 20px;
+}
+.kontaktside_icon{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--kontakt-baground-some);
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: var(--kontakt-text-color);
+}
+@media screen and (min-width: 700px){
+    .formel form{
+        width: 600px;
+        margin: 0 auto;
+    }
+    .SoMe_iconer_kontaktside_bund{
+        flex-direction: row;
+    }
+    .kontaktside_icon{
+        background: none;
+    }
+    .SoMe_iconer_kontaktside_top a img, .kontaktside_icon a img{
+        width: 70px;
+    }
+}
+/* Kontakt */
 /* Content SLut*/
 
 /* footer Start*/
@@ -534,6 +624,9 @@ footer{
     display: flex;
     justify-content: center;
     gap: 40px;
+}
+.SoMe_iconer a img{
+    width: 40px;
 }
 .footer_kontakt{
     display: flex;
@@ -560,6 +653,17 @@ footer{
     background: var(--footer-credits);
     padding: 10px;
 }
+@media screen and (min-width: 700px){
+        /* footer */
+        .footer_content{
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        .footer_content div{
+            width: 50%;
+        }
+        /* footer */
+}
 /* footer */
 
 /* Stop */
@@ -568,8 +672,6 @@ footer{
     .stop_early{
         width: 1120px;
         margin: 0 auto;
-        position: relative;
-        padding: 10px;
     }
 }
 /* Genneral stop */
