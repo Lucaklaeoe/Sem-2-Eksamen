@@ -24,25 +24,27 @@ const arrow = document.getElementById("arrow");
 window.onscroll = function() {
     //hvis gemte scroll er højrer end nuværende scroll
     //scroll up                bliver nede hvis du er i toppen
-    if(oldScroll > scrollY || scrollY < 60){
-        
-        navbar.style.top = "0px";
-        progressbar.style.top = "69px";
+    if(progressbar){
+        if(oldScroll > scrollY || scrollY < 60){
+            navbar.style.top = "0px";
+            progressbar.style.top = "69px";
+        }
+        //scroll down
+        else{
+            navbar.style.top = "-70px";
+            progressbar.style.top = "0px";
+        }
+        //User journey progress bar, when scroll
+        progress.style.width = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + "%";
     }
-    //scroll down
-    else{
-        navbar.style.top = "-70px";
-        progressbar.style.top = "0px";
-    }
+    
     //lukker navbar hvis den er åben
     if(!burgerbar){
         chance_navbar();
     }
     oldScroll = scrollY;
 
-    //User journey progress bar, when scroll
-    progress.style.width = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + "%";
-
+    
     //remove arrow
     if(scrollY >= 500){
         //ændre farve istedet for display for at lave det smooth
@@ -80,6 +82,51 @@ function swapText(newText) {
     else if (newText == "Bard") {
         overskrift.innerText="Bard";
         tekst.innerText="klasse "; 
+    }
+
+    else if (newText == "Cleric") {
+        overskrift.innerText="Cleric";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Druid") {
+        overskrift.innerText="Druid";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Fighter") {
+        overskrift.innerText="Fighter";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Munk") {
+        overskrift.innerText="Munk";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Paladin") {
+        overskrift.innerText="Paladin";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Ranger") {
+        overskrift.innerText="Ranger";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Rogue") {
+        overskrift.innerText="Rogue";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Ranger") {
+        overskrift.innerText="Ranger";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Sorcerer") {
+        overskrift.innerText="Sorcerer";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Warlock") {
+        overskrift.innerText="Warlock";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Troldmand") {
+        overskrift.innerText="Troldmand";
+        tekst.innerText="klasse "; 
     };
 
     //tilføjer aktiv + fjerner aktiv
@@ -96,3 +143,64 @@ function swapText(newText) {
         oldtext = null;
     }
 }
+//tekst til klasser slut
+
+
+const Navn = document.getElementById("Navn");
+const Email = document.getElementById("Email");
+const Besked = document.getElementById("Besked");
+const info = document.getElementById("info");
+
+if(Navn){
+    (function() {
+        //https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+        publicKey: "IICOjP8VvZvZgUlsM",
+        });
+    })();
+
+    window.onload = function() {
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();       
+
+            if(Navn.value != "" && Email.value != "" && Besked.value != ""){
+            //Alle felter er udfyldt --> do this  
+                emailjs.sendForm('service_kesfnw1', 'template_uvrhrpc', this).then(() => {
+                    //Removes the submit buttons funktion and the text in the input boxes
+                    document.getElementById("submit").setAttribute("type","Done");
+                    //sæt formen til start
+                    Navn.value = null;
+                    Email.value = null;
+                    Besked.value = null;
+                    //fjern deres class, hvis der var noget man ikke udfyldte
+                    Navn.classList = "";
+                    Email.classList = "";
+                    Besked.classList = "";
+
+                    info.innerHTML = "Mail sendt!";
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                        info.innerHTML = "Fejl, prøv igen"; 
+                });
+            } 
+            else{
+                var message_to_user = "Du mangler at udfylde følgende: ";
+                if(Navn.value == ""){
+                    Navn.classList = "not_filled";
+                    message_to_user += "<br> - Navn";
+                };
+                if(Email.value == ""){
+                    Email.classList = "not_filled";
+                    message_to_user += "<br> - Email";
+                };
+                if(Besked.value == ""){
+                    Besked.classList = "not_filled";
+                    message_to_user += "<br> - Besked";
+                };
+                info.innerHTML = message_to_user;
+            };
+        });
+    };
+}
+
+

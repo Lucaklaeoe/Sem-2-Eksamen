@@ -40,13 +40,20 @@ body{
     --kontakt-bagrund: #53806A;
     --kontakt-text-color: #fff;
     --kontakt-baground-some: #80535B;
-    --kontakt-placeholder-form-text-color: #313131;
+    --kontakt-placeholder-form-text-color: #ffffff;
     --kontakt-submit-button: #FFA6B7;
+    --Placeholder-not-filled: red;
     /* Kontakt */
+
+    /* Klasser */
+    --klasser-aktiv: violet; 
+    /* Klasser */
+
 
     /* Knapper */
     --forklare-knap: #A1D3FF;
     --forklare-knap-hover: #A1D3FF;
+    --forklar-knap-tekst-color:rgb(163, 76, 76);
     --videre-knap: #ffa6b6;
     --videre-knap-hover: #ffa8b8;
     /* Knapper */
@@ -309,6 +316,7 @@ section{
     background: var(--forklare-knap);
     transition: 0.5s;
     cursor: pointer;
+    color: var(--forklar-knap-tekst-color);
 }
 .forklare_knap:hover{
     margin-top: 0;
@@ -359,7 +367,7 @@ section{
     background: var(--baground-color);
 }
 
-/* videre Kanp */
+/* videre Knap */
 .knap{
     display: flex;
     justify-content: center;
@@ -378,7 +386,7 @@ section{
     transition: 0.5s;
     background: var(--videre-knap-hover);
 }
-/* videre Kanp */
+/* videre Knap */
 
 @media screen and (min-width: 700px){
     /* Guide */
@@ -464,8 +472,9 @@ section{
 }
 
 /* byg din karakter Start*/
-.hvad_er_klasser{
-    padding: 20px;
+ 
+.hvad_er_klasser .race{
+    padding: 20px 20px 20px 0;
 }
 
 .klasser{
@@ -482,9 +491,10 @@ section{
     height: auto;
 }
 .klasser .ikon{
+    min-width: 50px;
     background-color: #fff;
     border-radius: 6px;
-    padding: 10px;
+    padding: 20px 10px 10px 10px;
     text-align: center; 
     cursor: pointer;
     transition: 0.5s;
@@ -492,40 +502,48 @@ section{
 .klasser .ikon:hover{
     background-color:#ffa6b6;
 }
+.klasser .ikon a p{
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
 
 .active{
-    background-color: violet !important;
+    background-color: var(--klasser-aktiv) !important;
 }
 
-.race{
-    padding: 85px 10px 5px 10px;
-}
-.racebilleder{
-    display: flex;
-    overflow:scroll;
-}
-.racebilleder{
-    display: flex;
-    overflow:scroll;
-}
-.racebilleder img{
-    max-width: 100px;
-    height: auto;
-} 
 .karakter_indhold .kasse{
    padding: 20px;
 }
 .karakter_indhold p{
     padding-bottom: 25px;
 }
-/* byg din karakter */
+@media screen and (min-width:700px) {
+    .karakter{
+        display: flex;
+        gap: 20px;
+    }
+    
+    .ikon{
+       width: 75px;
+    }
+    .klasser{
+        min-width: 400px;
+    }
+   
+}
 
-/* Kontakt */
+@media screen and ( min-width:1120px) {
+    .ikon{
+        width: 125px;
+    }
+}
+/* byg din karakter slut*/
+/* Kontakt start*/
 .kontaktside{
     height: fit-content;
     background: var(--kontakt-bagrund);
     color: var(--kontakt-text-color);
-    padding: 10px 0;
+    padding: 75px 0;
 }
 .kontaktside div{
     display: flex;
@@ -549,6 +567,7 @@ section{
     max-width: 600px;
     padding: 10px;
     border-radius: 6px;
+    font-weight: 600;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 .formel form textarea{
@@ -561,17 +580,14 @@ section{
     font-weight: 600;
     font-size: 1.2em
 }
-.kontaktside{
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
+
 .submit{
     /* Virker ikke uden important, har prøvet at rykke den ned */
     width: 100px !important;
     background-color: var(--kontakt-submit-button);
     font-weight: 600;
     cursor: pointer;
+    text-align: center;
 }
 .SoMe_iconer_kontaktside_bund{
     flex-direction: column;
@@ -604,8 +620,16 @@ a{
         width: 70px;
     }
 }
-/* Kontakt */
-/* Content SLut*/
+
+/* Når felt i kontakt-formen ikke er fyldt */
+.not_filled::placeholder{
+    color: var(--Placeholder-not-filled) !important;
+}
+.message_to_user{
+    height: 84px;
+}
+/* Kontakt slut*/
+/* Content Slut*/
 
 /* footer Start*/
 footer{

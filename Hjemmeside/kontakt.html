@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Din DnD - Kontakt</title>
+
+    <!-- Link to Emil js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="icon2.png">
+    <link rel="icon" href="icon.png">
 </head>
 <body>
     <!-- Nav bar -->
@@ -51,7 +55,7 @@
         <div class="formel stop_early">
             <!-- Does not work !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <form id="contact-form">      
-                <label>Eller udfyld formen</label>
+                <label>Klik på et icon <br> Eller udfyld formen</label>
                 <input type="text" name="from_name" placeholder="Navn" id="Navn">
 
                 <input type="email" name="Email_name" placeholder="Eksempel@email.com" id="Email">
@@ -59,6 +63,7 @@
                 <textarea name="message" placeholder="Din besked" id="Besked"></textarea>
     
                 <input type="submit" value="Send" id="submit" class="submit">
+                <p id="info" class="message_to_user"></p>
             </form>
         </div>
         <div class="SoMe_iconer_kontaktside_bund stop_early">
