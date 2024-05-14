@@ -82,6 +82,51 @@ function swapText(newText) {
     else if (newText == "Bard") {
         overskrift.innerText="Bard";
         tekst.innerText="klasse "; 
+    }
+
+    else if (newText == "Cleric") {
+        overskrift.innerText="Cleric";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Druid") {
+        overskrift.innerText="Druid";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Fighter") {
+        overskrift.innerText="Fighter";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Munk") {
+        overskrift.innerText="Munk";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Paladin") {
+        overskrift.innerText="Paladin";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Ranger") {
+        overskrift.innerText="Ranger";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Rogue") {
+        overskrift.innerText="Rogue";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Ranger") {
+        overskrift.innerText="Ranger";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Sorcerer") {
+        overskrift.innerText="Sorcerer";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Warlock") {
+        overskrift.innerText="Warlock";
+        tekst.innerText="klasse "; 
+    }
+    else if (newText == "Troldmand") {
+        overskrift.innerText="Troldmand";
+        tekst.innerText="klasse "; 
     };
 
     //tilføjer aktiv + fjerner aktiv
@@ -98,7 +143,7 @@ function swapText(newText) {
         oldtext = null;
     }
 }
-
+//tekst til klasser slut
 
 
 const Navn = document.getElementById("Navn");
