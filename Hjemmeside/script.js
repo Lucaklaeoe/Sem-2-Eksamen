@@ -135,6 +135,7 @@ if(Navn){
                     info.innerHTML = "Mail sendt!";
                     }, (error) => {
                         console.log('FAILED...', error);
+                        info.innerHTML = "Fejl, prøv igen"; 
                 });
             } 
             else{
