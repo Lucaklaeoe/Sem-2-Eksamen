@@ -58,6 +58,10 @@ body{
     --videre-knap-hover: #ffa8b8;
     /* Knapper */
 
+    /* Vision */
+    --icon_baggrund: #ffa6b6dc ;
+    /* Vision */
+
     /* Footer */
     --footer-green: #53806A;
     --footer-credits: #3c5d4d;
@@ -538,6 +542,85 @@ section{
     }
 }
 /* byg din karakter slut*/
+
+/* Vores Vision start*/
+
+.visionside{
+    height: fit-content;
+    background: var(--icon_baggrund);
+    color: var(--kontakt-text-color);
+    padding: 30px 0;
+}
+
+.visionside h2{
+    padding: 10px;
+    text-align: center;
+}
+
+.vores_vision_content{
+    border-top: solid 10px var(--icon_baggrund);
+    padding: 20px ;
+}
+
+.vores_vision_content h1{
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.vores_vision_content p{
+    border-top: solid 3px var(--icon_baggrund);
+    padding: 20px ;
+}
+
+.visionside div{
+    display: flex;
+    justify-content: space-evenly;
+}
+.SoMe_iconer_visionside_top a img, .visionside_icon a img{
+    width: 60px;
+}
+
+@media screen and (min-width: 800px) {
+   
+
+    .vision_container {
+        
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Two equal columns */
+        grid-gap: 20px; /* Gap between the columns */
+    }
+    
+    .vores_vision_content {
+        grid-column: 1 / 2; /* Span from the first column to the second column */
+    }
+    
+    .vision_image_container {
+        border-top: solid 10px var(--icon_baggrund);
+        grid-column: 2 / 3; /* Span from the second column to the third column */ 
+        text-align: center; /* Center the image horizontally */
+    }
+    
+    .vision_image_container img {
+        max-width: 100%; /* Ensure the image does not exceed its container */
+        display: block; /* Remove any extra spacing */
+        margin: 0 auto; /* Center the image within its container */
+    }
+
+
+
+}
+
+@media screen and (max-width: 800px) {
+.vision_image_container{
+    display: none;
+}
+
+.vision_foot_content{
+    padding: 30px;
+}
+}
+/* Vores Vision slut*/
+
 /* Kontakt start*/
 .kontaktside{
     height: fit-content;
