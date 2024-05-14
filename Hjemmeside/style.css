@@ -40,7 +40,7 @@ body{
     --kontakt-bagrund: #53806A;
     --kontakt-text-color: #fff;
     --kontakt-baground-some: #80535B;
-    --kontakt-placeholder-form-text-color: #313131;
+    --kontakt-placeholder-form-text-color: #ffffff;
     --kontakt-submit-button: #FFA6B7;
     --Placeholder-not-filled: red;
     /* Kontakt */
@@ -48,6 +48,7 @@ body{
     /* Knapper */
     --forklare-knap: #A1D3FF;
     --forklare-knap-hover: #A1D3FF;
+    --forklar-knap-tekst-color:rgb(163, 76, 76);
     --videre-knap: #ffa6b6;
     --videre-knap-hover: #ffa8b8;
     /* Knapper */
@@ -310,6 +311,7 @@ section{
     background: var(--forklare-knap);
     transition: 0.5s;
     cursor: pointer;
+    color: var(--forklar-knap-tekst-color);
 }
 .forklare_knap:hover{
     margin-top: 0;
@@ -492,6 +494,10 @@ section{
 }
 .klasser .ikon:hover{
     background-color:#ffa6b6;
+}
+.klasser .ikon a p{
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .active{
