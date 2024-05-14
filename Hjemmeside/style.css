@@ -45,6 +45,11 @@ body{
     --Placeholder-not-filled: red;
     /* Kontakt */
 
+    /* Klasser */
+    --klasser-aktiv: violet; 
+    /* Klasser */
+
+
     /* Knapper */
     --forklare-knap: #A1D3FF;
     --forklare-knap-hover: #A1D3FF;
@@ -485,9 +490,10 @@ section{
     height: auto;
 }
 .klasser .ikon{
+    min-width: 50px;
     background-color: #fff;
     border-radius: 6px;
-    padding: 10px;
+    padding: 20px 10px 10px 10px;
     text-align: center; 
     cursor: pointer;
     transition: 0.5s;
@@ -501,7 +507,7 @@ section{
 }
 
 .active{
-    background-color: violet !important;
+    background-color: var(--klasser-aktiv) !important;
 }
 
 .race{
