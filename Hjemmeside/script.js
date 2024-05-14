@@ -46,7 +46,7 @@ window.onscroll = function() {
 
     
     //remove arrow
-    if(scrollY >= 500){
+    if(scrollY >= 500 && arrow){
         //ændre farve istedet for display for at lave det smooth
         arrow.style.color = "#ffffff00";
     };
@@ -59,6 +59,74 @@ function scrollPage() {
     });
 }
 
+
+
+//kode til Race beskrivelse
+const race_tekst = document.getElementById("race_tekst");
+const race_overskrift = document.getElementById("race_overskrift");
+var gammel_tekst;
+ //tekst swap ved racer herunder
+function swapText2(newText) {
+    //ændrer tekst
+    if (newText == gammel_tekst){
+        race_overskrift.innerText="Hvad er classes?";
+        race_tekst.innerText="Der er flere racer at vælge imellem når man skal bygge en karakter. Det gør ofte ikke den store forskel hvilken race man vælger. Vi har valgt de mest normale. Hvis du er tvivl - så spørg din DM om hvilke racer I spiller med."; 
+    }
+    else if(newText == "reset"){
+        race_overskrift.innerText = "Hvad er classes?";
+       race_tekst.innerText="Der er flere racer at vælge imellem når man skal bygge en karakter. Det gør ofte ikke den store forskel hvilken race man vælger. Vi har valgt de mest normale. Hvis du er tvivl - så spørg din DM om hvilke racer I spiller med."; 
+    
+    }
+    else if (newText == "Gnom") {
+        race_overskrift.innerText="Gnom";
+        race_tekst.innerText="race blob"; 
+    }
+    else if (newText == "Hobbit") {
+        race_overskrift.innerText="Hobbit";
+        race_tekst.innerText="race "; 
+    }
+
+    else if (newText == "Tiefling") {
+        race_overskrift.innerText="Tiefling";
+        race_tekst.innerText="race"; 
+    }
+    else if (newText == "Dværg") {
+        race_overskrift.innerText="Dværg";
+        race_tekst.innerText="race"; 
+    }
+    else if (newText == "Menneske") {
+        race_overskrift.innerText="Menneske";
+        race_tekst.innerText="race "; 
+    }
+    else if (newText == "Elver") {
+        race_overskrift.innerText="Elver";
+        race_tekst.innerText="race "; 
+    }
+    else if (newText == "Halv_Elver") {
+        race_overskrift.innerText="Halv Elver";
+        race_tekst.innerText="race "; 
+    }
+    else if (newText == "Halv_Ork") {
+        race_overskrift.innerText="Halv Ork ";
+        race_tekst.innerText="race"; 
+    }
+;
+
+    //tilføjer aktiv + fjerner aktiv
+    document.getElementById(newText).classList += " active";
+    if(gammel_tekst){
+        document.getElementById(gammel_tekst).classList = "ikon " + gammel_tekst;
+    }
+
+    // gemmer original id
+    if (newText != gammel_tekst){
+        gammel_tekst = newText;
+    } 
+    else{
+        gammel_tekst = null;
+    }
+}
+//race tekst swap slut
 //kode til klasse beskrivelse
 const tekst = document.getElementById("class_tekst");
 const overskrift = document.getElementById("class_overskrift");
@@ -146,6 +214,26 @@ function swapText(newText) {
 //tekst til klasser slut
 
 
+//Terninger
+function Rolldice(dice){
+    const the_dice = document.getElementById(dice)
+    const dice_img = document.getElementById(dice + 'dice');
+    const randomnumber = Math.floor(Math.random() * dice.split("D")[1] + 1);
+    the_dice.style.fontSize = "0px";
+    dice_img.style.transition = "ease-in-out 1s";
+    dice_img.style.transform = 'rotate(360deg)';
+
+    setTimeout(function(){
+        the_dice.textContent = randomnumber;
+        the_dice.style.fontSize = "1.5em";
+
+        dice_img.style.transition = "0s";
+        dice_img.style.transform = 'rotate(0deg)';
+    }, 1000)
+};
+
+
+//kontakt formular
 const Navn = document.getElementById("Navn");
 const Email = document.getElementById("Email");
 const Besked = document.getElementById("Besked");
@@ -201,6 +289,4 @@ if(Navn){
             };
         });
     };
-}
-
-
+};

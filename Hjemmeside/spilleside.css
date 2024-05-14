@@ -1,0 +1,74 @@
+:root{
+    --terning-text-color: #fff;
+}
+
+
+.terninger{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+.terning{
+    scroll-snap-align: start;
+    position: relative;
+    padding: 0 10px;
+}
+.terning p{
+    transition: 0.5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--terning-text-color);
+    font-weight: 600;
+    padding-bottom: 5px;
+    font-size: 1.5em;
+}
+.terning img{
+    width: 100px;
+    transition:ease-in-out 0.5;
+}
+
+.spilside_bund{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.spilside_buttom{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.Buttom_img img{
+    width: 100%;
+    border-radius: 6px;
+}
+
+@media screen and (min-width: 700px){
+    .terning img{
+        width: 150px;
+    }
+
+    .spilside_buttom{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .Buttom_img, .Buttom_tekst{
+        width: 50%;
+    }
+
+    .spilside_top div{
+        display: flex;
+        gap: 20px;
+    }
+    .spilside_top div p{
+        width: 50%;
+    }
+
+}
