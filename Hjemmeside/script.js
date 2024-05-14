@@ -46,7 +46,7 @@ window.onscroll = function() {
 
     
     //remove arrow
-    if(scrollY >= 500){
+    if(scrollY >= 500 && arrow){
         //ændre farve istedet for display for at lave det smooth
         arrow.style.color = "#ffffff00";
     };
@@ -146,6 +146,26 @@ function swapText(newText) {
 //tekst til klasser slut
 
 
+//Terninger
+function Rolldice(dice){
+    const the_dice = document.getElementById(dice)
+    const dice_img = document.getElementById(dice + 'dice');
+    const randomnumber = Math.floor(Math.random() * dice.split("D")[1] + 1);
+    the_dice.style.fontSize = "0px";
+    dice_img.style.transition = "ease-in-out 1s";
+    dice_img.style.transform = 'rotate(360deg)';
+
+    setTimeout(function(){
+        the_dice.textContent = randomnumber;
+        the_dice.style.fontSize = "1.5em";
+
+        dice_img.style.transition = "0s";
+        dice_img.style.transform = 'rotate(0deg)';
+    }, 1000)
+};
+
+
+//kontakt formular
 const Navn = document.getElementById("Navn");
 const Email = document.getElementById("Email");
 const Besked = document.getElementById("Besked");
@@ -201,6 +221,4 @@ if(Navn){
             };
         });
     };
-}
-
-
+};
