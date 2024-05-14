@@ -7,11 +7,11 @@ function swapText(newText) {
     //ændrer tekst
     if (newText == gammel_tekst){
         race_overskrift.innerText="Hvad er classes?";
-        race_tekst.innerText="Det, der er vigtigst for din karakter, er hvilken klasser du vælger. En class er en slags arbejde, din karakter har. Din class bestemmer, hvilke evner du kan have. Det kan være alt fra at slå ekstra hårdt til være usynlig."; 
+        race_tekst.innerText="Der er flere racer at vælge imellem når man skal bygge en karakter. Det gør ofte ikke den store forskel hvilken race man vælger. Vi har valgt de mest normale. Hvis du er tvivl - så spørg din DM om hvilke racer I spiller med."; 
     }
     else if(newText == "reset"){
-        overskrift.innerText = "Hvad er classes?";
-        tekst.innerText="Det, der er vigtigst for din karakter, er hvilken klasser du vælger. En class er en slags arbejde, din karakter har. Din class bestemmer, hvilke evner du kan have. Det kan være alt fra at slå ekstra hårdt til være usynlig."; 
+        race_overskrift.innerText = "Hvad er classes?";
+       race_tekst.innerText="Der er flere racer at vælge imellem når man skal bygge en karakter. Det gør ofte ikke den store forskel hvilken race man vælger. Vi har valgt de mest normale. Hvis du er tvivl - så spørg din DM om hvilke racer I spiller med."; 
     
     }
     else if (newText == "Gnom") {
@@ -56,8 +56,8 @@ function swapText(newText) {
     }
 
     // gemmer original id
-    if (newText != oldtext){
-        oldtext = newText;
+    if (newText != gammel_text){
+        gammel_tekst = newText;
     } 
     else{
         oldtext = null;
