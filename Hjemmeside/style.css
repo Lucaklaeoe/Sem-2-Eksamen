@@ -472,8 +472,9 @@ section{
 }
 
 /* byg din karakter Start*/
-.hvad_er_klasser{
-    padding: 20px;
+ 
+.hvad_er_klasser .race{
+    padding: 20px 20px 20px 0;
 }
 
 .klasser{
@@ -510,26 +511,31 @@ section{
     background-color: var(--klasser-aktiv) !important;
 }
 
-.race{
-    padding: 85px 10px 5px 10px;
-}
-.racebilleder{
-    display: flex;
-    overflow:scroll;
-}
-.racebilleder{
-    display: flex;
-    overflow:scroll;
-}
-.racebilleder img{
-    max-width: 100px;
-    height: auto;
-} 
 .karakter_indhold .kasse{
    padding: 20px;
 }
 .karakter_indhold p{
     padding-bottom: 25px;
+}
+@media screen and (min-width:700px) {
+    .karakter{
+        display: flex;
+        gap: 20px;
+    }
+    
+    .ikon{
+       width: 75px;
+    }
+    .klasser{
+        min-width: 400px;
+    }
+   
+}
+
+@media screen and ( min-width:1120px) {
+    .ikon{
+        width: 125px;
+    }
 }
 /* byg din karakter slut*/
 /* Kontakt start*/
