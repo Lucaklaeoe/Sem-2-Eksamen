@@ -8,6 +8,15 @@
     <link rel="icon" href="icon.png">
 </head>
 <body>
+    <aside class="popup" id="popup">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 50 50" onclick="popup('reset')">
+            <path class="cls-1" d="M-3.77,24.79h57.97c0,1.03-.83,1.86-1.86,1.86H-5.64c0-1.03.83-1.86,1.86-1.86Z" transform="translate(25.72 -9.62) rotate(45.68)"/>
+            <path class="cls-1" d="M-5.3,24.79h57.97c1.03,0,1.86.83,1.86,1.86H-3.66c-.91,0-1.64-.74-1.64-1.64v-.22h0Z" transform="translate(60.2 26.5) rotate(135)"/>
+        </svg>
+        <h1 id="popup_overskrift">Terninger</h1>
+        <video id="video" src="" controls></video>
+    </aside>
+
     <!-- Nav bar -->
     <nav id="navbar">
         <div class="navbar_indhold stop">
@@ -26,8 +35,8 @@
                     <ul class="Nav_liste">
                         <li><a href="index.html">Forside</a></li>
                         <li><a href="bygkarakter.html">Karakter guide</a></li>
-                        <li><a href="">Spil</a></li>
-                        <li><a href="">vores vision</a></li>
+                        <li><a href="Spilleside.html">Spil</a></li>
+                        <li><a href="voresvision.html">vores vision</a></li>
                         <li><a href="kontakt.html">kontakt</a></li>
                     </ul>
                 </div>
@@ -105,15 +114,15 @@
                             </ul>
                         </div>
                         <div class="forviret">
-                            <h3>Forviret? klik her:</h3>
+                            <h3>Forklaring</h3>
                             <div class="forklarings_knapper">
-                                <a class="forklare_knap">
+                                <a class="forklare_knap" onclick="popup('terninger.mp4', 'Terninger')">
                                     <p>Speciale terninger</p>
                                 </a>
-                                <a class="forklare_knap">
+                                <a class="forklare_knap" onclick="popup('karakter_ark.mov', 'Karakter ark')">
                                     <p>Karakter Ark</p>
                                 </a>
-                                <a class="forklare_knap">
+                                <a class="forklare_knap" onclick="popup('dungeon_master.mp4', 'Dungeon master (DM)')">
                                     <p>Dungeons master (DM)</p>
                                 </a>
                             </div>
