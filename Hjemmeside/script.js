@@ -232,6 +232,21 @@ function Rolldice(dice){
     }, 1000)
 };
 
+//popup
+const video_element = document.getElementById("video");
+const popup_element = document.getElementById("popup");
+const popup_overskrift = document.getElementById("popup_overskrift");
+function popup(video, overskrift){
+    if(video == "reset"){
+        popup_element.style.top = "150%";
+    }
+    else{
+        video_element.setAttribute("src", "forklarings_videoer/" + video);
+        popup_element.style.top = "50%";
+        popup_overskrift.innerText = overskrift;
+    }
+};
+
 
 //kontakt formular
 const Navn = document.getElementById("Navn");

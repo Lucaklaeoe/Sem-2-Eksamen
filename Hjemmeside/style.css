@@ -68,6 +68,11 @@ body{
     --footer-color: #fff;
     /* Footer */
 
+    /* Popup */
+    --popup_baground-color: #616161;
+    --X-color: #fff;
+    --popup-text-color: #fff;
+    /* Popup */
 }
 
 /* Navbar Start*/
@@ -777,6 +782,46 @@ footer{
         /* footer */
 }
 /* footer */
+
+/* Popup start*/
+.popup{
+    position: fixed;
+    height: fit-content;
+    width: 80vw;
+    background: var(--popup_baground-color);
+    z-index: 5;
+    padding: 20px;
+
+    top: 150%; /* Gå til 50% */
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    transition: 1s;
+    border-radius: 6px;
+}
+.popup h1{
+    color: var(--popup-text-color);
+    letter-spacing: 1px;
+}
+.popup svg{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 6;
+}
+.popup svg path{
+    fill: none;
+    stroke: var(--X-color);
+    stroke-miterlimit: 10;
+    stroke-width: 4px;
+}
+.popup video{
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 6px;
+}
+/* Popup slut*/
 
 /* Stop */
 /* Mest for text */
