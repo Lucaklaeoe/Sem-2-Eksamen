@@ -44,11 +44,14 @@ body{
     --kontakt-submit-button: #FFA6B7;
     --Placeholder-not-filled: red;
     /* Kontakt */
+    
+    /* Spilleside */
+    --terning-text-color: #fff;
+    /* Spilleside */
 
     /* Klasser */
     --klasser-aktiv: violet; 
     /* Klasser */
-
 
     /* Knapper */
     --forklare-knap: #A1D3FF;
@@ -590,10 +593,7 @@ section{
 }
 
 @media screen and (min-width: 800px) {
-   
-
-    .vision_container {
-        
+    .vision_container { 
         display: grid;
         grid-template-columns: 1fr 1fr; /* Two equal columns */
         grid-gap: 20px; /* Gap between the columns */
@@ -614,9 +614,6 @@ section{
         display: block; /* Remove any extra spacing */
         margin: 0 auto; /* Center the image within its container */
     }
-
-
-
 }
 
 @media screen and (max-width: 800px) {
@@ -624,13 +621,82 @@ section{
     display: none;
 }
 
-
 }
 .vision_foot_content{
     padding: 30px;
 }
 /* Vores Vision slut*/
 
+/* spilleside start*/
+.terninger{
+    display: flex;
+    justify-content: space-evenly;
+    gap: 20px;
+
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+.terning{
+    scroll-snap-align: start;
+    position: relative;
+    padding: 0 10px;
+}
+.terning p{
+    transition: 0.5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--terning-text-color);
+    font-weight: 600;
+    padding-bottom: 5px;
+    font-size: 1.5em;
+}
+.terning img{
+    width: 100px;
+    transition:ease-in-out 0.5;
+}
+
+.spilside_bund{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.spilside_buttom{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.Buttom_img img{
+    width: 100%;
+    border-radius: 6px;
+}
+
+@media screen and (min-width: 700px){
+    .terning img{
+        width: 150px;
+    }
+
+    .spilside_buttom{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .Buttom_img, .Buttom_tekst{
+        width: 50%;
+    }
+
+    .spilside_top div{
+        display: flex;
+        gap: 20px;
+    }
+    .spilside_top div p{
+        width: 50%;
+    }
+}
+/* spilleside slut*/
 /* Kontakt start*/
 .kontaktside{
     height: fit-content;
