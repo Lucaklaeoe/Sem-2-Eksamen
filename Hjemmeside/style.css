@@ -484,6 +484,7 @@ section{
 .klasser{
     display: grid;
     gap: 10px;
+    padding-bottom: 10px;
     grid-template-areas: 
     "Barbarian Bard Cleric Druid"
     "Fighter Monk Paladin Ranger"
@@ -506,7 +507,7 @@ section{
 .klasser .ikon:hover{
     background-color:#ffa6b6;
 }
-.klasser .ikon a p{
+.klasser .ikon p{
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -520,6 +521,9 @@ section{
 }
 .karakter_indhold p{
     padding-bottom: 25px;
+}
+.bygkarakter_overskrift{
+    padding: 20px 0 10px 0;
 }
 @media screen and (min-width:700px) {
     .karakter{
