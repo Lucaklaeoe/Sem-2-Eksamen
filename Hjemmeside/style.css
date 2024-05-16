@@ -20,9 +20,10 @@ body{
     --nav-green: #53806A;
     --nav-links: #fff;
     --nav-green-see-through: #53806acc;
-    --nav-links-hover: #b2b2b2;
+    --nav-links-hover: #A6FFD4;
     --nav-progress: linear-gradient(to right, #A1D3FF, #A6FFD4);
     --nav-progress-baground: #3c5d4d;
+    --text-color-current: #A6FFD4;
     /* Nav */
 
     /* header */
@@ -225,6 +226,17 @@ nav{
     transition: width 0.1s;
 }
 /* User journey Slut*/
+
+/* Displays current nav-place */
+.Current_nav{
+    /* Important for overright andet */
+    color: var(--text-color-current) !important;
+}
+.Current_nav a{
+    color: var(--text-color-current) !important;
+    border-bottom: 2px solid var(--text-color-current);
+}
+/* Displays current nav-place */
   
 /* Navbar Slut*/
 
