@@ -239,6 +239,7 @@ const popup_overskrift = document.getElementById("popup_overskrift");
 function popup(video, overskrift){
     if(video == "reset"){
         popup_element.style.top = "150%";
+        video_element.setAttribute("src", null);
     }
     else{
         video_element.setAttribute("src", "forklarings_videoer/" + video);
