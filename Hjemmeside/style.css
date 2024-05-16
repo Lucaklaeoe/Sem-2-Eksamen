@@ -387,6 +387,7 @@ section{
     display: flex;
     justify-content: center;
     padding: 40px;
+    gap: 20px;
 }
 .knap a{
     padding: 20px;
