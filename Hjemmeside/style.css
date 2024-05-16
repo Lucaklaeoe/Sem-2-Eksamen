@@ -34,6 +34,7 @@ body{
     /* Main */
     --baground-color: rgba(255, 166, 182, 0.24);
     --main-text-color: #000;
+    --linje-text-adskiller: #ffa6b667;
     /* Main */
 
     /* Kontakt */
@@ -303,7 +304,12 @@ main{
 }
 section{
     width: 100%;
-    padding: 10px;
+    padding: 30px;
+}
+.content_overskrift{
+    margin: 20px 0;
+    padding-bottom: 5px;
+    border-bottom: 3px solid var(--linje-text-adskiller);
 }
 .images{
     position: relative;
@@ -326,7 +332,7 @@ section{
     gap: 20px;
 }
 .forklare_knap{
-    min-width: 100px;
+    min-width: 200px;
     text-align: center;
     border-radius: 6px;
     padding: 10px;
@@ -357,7 +363,6 @@ section{
     justify-content: center;
     padding: 10px;
 }
-
 
 /* Guide */
 .guide{
@@ -449,6 +454,10 @@ section{
         width: 50%;
         margin: 0;
     }
+    .main_text{
+        padding-bottom: 30px;
+        border-bottom: 3px solid var(--linje-text-adskiller);
+    }
     .main_text h2{
         margin-bottom: 10px;
         width: 75%;
@@ -484,9 +493,6 @@ section{
 }
 
 @media screen and (min-width: 1024px){
-    .forklarings_knapper{
-        padding: 0;
-    }
     .divider{
         gap: 50px;
     }
@@ -510,6 +516,11 @@ section{
     }
     /* Guide */
 }
+@media screen and (min-width: 1120px){
+    .forklarings_knapper{
+        padding: 0;
+    }
+}
 
 /* byg din karakter Start*/
  
@@ -521,21 +532,37 @@ section{
     display: grid;
     gap: 10px;
     padding-bottom: 10px;
-    grid-template-areas: 
-    "Barbarian Bard Cleric Druid"
-    "Fighter Monk Paladin Ranger"
-    "rogue Sorcerer Warlock Wizard"
-    ;
+    /* grid-template-areas: 
+    "Barbarian Bard Cleric"
+    "Druid Fighter Monk"
+    "Paladin Ranger rogue"
+    "Sorcerer Warlock Wizard"
+    ; */
+
+    grid-template-columns: 1fr 1fr 1fr;
+
+    /* display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%; */
 }
-.klasser img{
-    max-width: 100px;
-    height: auto;
+.ikon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    /* flex: 1 0 70px;
+    max-width: 70px; */
+}
+.ikon img{
+    width: 100%;
+    padding: 5px;
 }
 .klasser .ikon{
     min-width: 50px;
     background-color: #fff;
     border-radius: 6px;
-    padding: 20px 10px 10px 10px;
     text-align: center; 
     cursor: pointer;
     transition: 0.5s;
@@ -561,26 +588,52 @@ section{
 .bygkarakter_overskrift{
     padding: 20px 0 10px 0;
 }
+.bob{
+    background: #ffffff00 url(img/Perfekt\ bob\ uden\ tale.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media screen and (min-width:375px){
+    .klasser .ikon{
+        padding: 10px;
+    }
+    .ikon img{
+        padding: 0;
+    }
+}
+@media screen and (min-width:530px){
+    .klasser{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .bob{
+        display: none;
+    }
+}
 @media screen and (min-width:700px) {
     .karakter{
         display: flex;
         gap: 20px;
     }
-    
-    .ikon{
-       width: 75px;
+    .karakter div{
+        width: 100%;
     }
-    .klasser{
-        min-width: 400px;
+    .ikon img{
+        padding: 5px;
     }
-   
+    .klasser .ikon{
+        padding: 10px 0;
+    }
+}
+@media screen and (min-width:900px){
+    .ikon img{
+        padding: 0;
+    }
+    .klasser .ikon{
+        padding: 10px;
+    }
 }
 
-@media screen and ( min-width:1120px) {
-    .ikon{
-        width: 125px;
-    }
-}
+
 /* byg din karakter slut*/
 
 /* Vores Vision start*/
