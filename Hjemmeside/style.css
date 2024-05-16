@@ -137,7 +137,7 @@ nav{
     position: fixed;
 
     /* Hvor den skal ligge */
-    transition: left ease 1s;
+    transition: left ease 0.5s;
     top: 0;
     left: 100%;
 }
