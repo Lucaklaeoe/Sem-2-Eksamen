@@ -434,6 +434,7 @@ section{
     }
     .divider{
         display: flex;
+        align-items: center;
         gap: 20px;
     }
     .images{
@@ -457,9 +458,33 @@ section{
     .column_2{
         column-count: 2;
     }
+
+    .forklarings_knapper{
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: fit-content;
+        padding-top: 100px;
+        gap: 5px;
+    }
+
+    .forklare_overskrift{
+        display: none;
+    }
+    .forviret{
+        background: url(img/Perfekt\ bob.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        min-height: 232px;
+    }
+    .forklarings_knapper a{
+        width: fit-content;
+    }
 }
 
 @media screen and (min-width: 1024px){
+    .forklarings_knapper{
+        padding: 0;
+    }
     .divider{
         gap: 50px;
     }
@@ -471,9 +496,6 @@ section{
     }
     .forviret h3{
         text-align: center;
-    }
-    .forklarings_knapper{
-        justify-content: space-evenly;
     }
 
     /* Guide */
