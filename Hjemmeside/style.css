@@ -54,8 +54,8 @@ body{
     /* Klasser */
 
     /* Knapper */
-    --forklare-knap: #A1D3FF;
-    --forklare-knap-hover: #A1D3FF;
+    --forklare-knap: #53806A;
+    --forklare-knap-hover: #3c5d4d;
     --forklar-knap-tekst-color:rgb(255, 255, 255);
     --videre-knap: #ffa6b6;
     --videre-knap-hover: #ffa8b8;
@@ -326,6 +326,8 @@ section{
     gap: 20px;
 }
 .forklare_knap{
+    min-width: 100px;
+    text-align: center;
     border-radius: 6px;
     padding: 10px;
     background: var(--forklare-knap);
