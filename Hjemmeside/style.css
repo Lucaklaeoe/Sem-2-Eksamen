@@ -51,7 +51,7 @@ body{
     /* Spilleside */
 
     /* Klasser */
-    --klasser-aktiv: violet; 
+    --klasser-aktiv: #A6FFD4; 
     /* Klasser */
 
     /* Knapper */
@@ -264,11 +264,17 @@ header{
 }
 
 .header_underside{
-    padding: 20vh 0 0 10px;
+    padding: 20vh 0 0 30px;
     background: var(--gradiant-overlay) ,url(img/Cover.webp);
     background-size: cover;
     background-repeat: no-repeat;
     height: 40vh;
+}
+.headerimg_underside h1{
+    font-size: 2em;
+}
+.headerimg h1{
+    font-size: 2em;
 }
 
 @keyframes jump {
@@ -286,6 +292,12 @@ header{
 }
 
 @media screen and (min-width: 600px) {
+    .headerimg_underside h1{
+        font-size: 3.5em;
+    }
+    .headerimg h1{
+        font-size: 3.5em;
+    }
     .headerimg, .header_underside{
         background: var(--gradiant-overlay) ,url(img/cover_pc.webp);
         background-size: cover;
@@ -392,26 +404,38 @@ section{
 /* videre Knap */
 .knap{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding: 40px;
     gap: 20px;
 }
 .knap a{
-    padding: 20px;
+    padding: 10px;
     color: var(--main-text-color);
     text-decoration: none;
     background: var(--videre-knap);
     border-radius: 6px;
     font-weight: 600;
     transition: 0.5s;
+    text-align: center;
+    width: 200px;
 }
 .knap a:hover{
     transition: 0.5s;
     background: var(--videre-knap-hover);
 }
 /* videre Knap */
+@media screen and (min-width: 550px){
+    .knap{
+        flex-direction: row;
+    }
+}
 
 @media screen and (min-width: 700px){
+    .knap a{
+        padding: 20px;
+    }
     /* Guide */
     .guide{
         margin-top: 10px;
@@ -586,7 +610,7 @@ section{
     padding-bottom: 25px;
 }
 .bygkarakter_overskrift{
-    padding: 20px 0 10px 0;
+    padding: 0 0 10px 0;
 }
 .bob{
     background: #ffffff00 url(img/Perfekt\ bob\ uden\ tale.png);
