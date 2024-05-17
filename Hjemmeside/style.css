@@ -757,9 +757,9 @@ section{
     padding: 0 0px;
     cursor: pointer;
 }
-.terning p{
-    transition: 0.5s;
+.terning p{ 
     position: absolute;
+    text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -767,6 +767,7 @@ section{
     font-weight: 600;
     padding-bottom: 5px;
     font-size: 1.5em;
+    transition: ease-in-out 0.5s;
 }
 .terning img{
     width: 100px;
