@@ -1,5 +1,5 @@
 //navbar variabler
-let burgerbar = true;
+var burgerbar = true;
 const navbar_icon = document.getElementById("navbar_icon");
 const nav_liste = document.getElementById("nav_liste");
 const navbar = document.getElementById("navbar");
@@ -17,41 +17,37 @@ function chance_navbar(){
     burgerbar = !burgerbar;
 }
 
-let oldScroll;
+var oldScroll;
 const progressbar = document.getElementById("progressbar");
 const progress = document.getElementById("progress");
 const arrow = document.getElementById("arrow");
 window.onscroll = function() {
     //hvis gemte scroll er højrer end nuværende scroll
     //scroll up                bliver nede hvis du er i toppen
-    if(navbar){
-        if(oldScroll > scrollY || scrollY < 60){
-            navbar.style.top = "0px";
+    if(oldScroll > scrollY || scrollY < 60){
+        navbar.style.top = "0px";
 
-            if(progressbar){
-                progressbar.style.top = "69px";
-            }
-        }
-        //scroll down
-        else{
-            navbar.style.top = "-70px";
-            
-            if(progressbar){
-                progressbar.style.top = "0px";
-            }
-        }
         if(progressbar){
-            //User journey progress bar, when scroll
-            progress.style.width = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + "%";
+            progressbar.style.top = "69px";
         }
     }
-    
+    //scroll down
+    else{
+        navbar.style.top = "-70px";
+
+        if(progressbar){
+            progressbar.style.top = "0px";
+        }
+    };
+    oldScroll = scrollY;
+    if(progressbar){
+        //User journey progress bar, when scroll
+        progress.style.width = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + "%";
+    };
     //lukker navbar hvis den er åben
     if(!burgerbar){
         chance_navbar();
-    }
-    oldScroll = scrollY;
-
+    };
     
     //remove arrow
     if(scrollY >= 500 && arrow){
