@@ -24,18 +24,26 @@ const arrow = document.getElementById("arrow");
 window.onscroll = function() {
     //hvis gemte scroll er højrer end nuværende scroll
     //scroll up                bliver nede hvis du er i toppen
-    if(progressbar){
+    if(navbar){
         if(oldScroll > scrollY || scrollY < 60){
             navbar.style.top = "0px";
-            progressbar.style.top = "69px";
+
+            if(progressbar){
+                progressbar.style.top = "69px";
+            }
         }
         //scroll down
         else{
             navbar.style.top = "-70px";
-            progressbar.style.top = "0px";
+            
+            if(progressbar){
+                progressbar.style.top = "0px";
+            }
         }
-        //User journey progress bar, when scroll
-        progress.style.width = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + "%";
+        if(progressbar){
+            //User journey progress bar, when scroll
+            progress.style.width = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + "%";
+        }
     }
     
     //lukker navbar hvis den er åben
@@ -58,8 +66,6 @@ function scrollPage() {
         behavior: 'smooth'
     });
 }
-
-
 
 //kode til Race beskrivelse
 const race_tekst = document.getElementById("race_tekst");
