@@ -234,11 +234,19 @@ function popup(video, overskrift){
     if(video == "reset"){
         popup_element.style.top = "150%";
         video_element.setAttribute("src", null);
+        //fjern autoplay
+        video_element.removeAttribute("autoplay")
     }
     else{
         video_element.setAttribute("src", "forklarings_videoer/" + video);
         popup_element.style.top = "50%";
         popup_overskrift.innerText = overskrift;
+
+        //set autoplay efter animation
+        setTimeout(function(){
+            video_element.setAttribute("autoplay","autoplay");
+            video_element.load();
+        },1500);
     }
 };
 

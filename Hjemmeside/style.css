@@ -329,6 +329,8 @@ main{
 section{
     width: 100%;
     padding: 30px;
+    padding-bottom: 50px;
+
 }
 .content_overskrift{
     margin: 20px 0;
@@ -337,10 +339,12 @@ section{
 }
 .images{
     position: relative;
-    width: 100%;
+    width: clamp(200px, 100%, 550px );
     height: fit-content;
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin: 20px 0;
 }
 .images img{
     width: 100%;
@@ -397,6 +401,8 @@ section{
     height: fit-content;
     display: flex;
     flex-direction: column;
+    border-radius: 6px;
+    margin: 30px;
 }
 .guide_list{
     padding-left: 20px;
@@ -412,7 +418,9 @@ section{
 .pink_bagrund{
     background: var(--baground-color);
 }
-
+.forklare_overskrift{
+    margin: 20px 0 10px 0;
+}
 /* videre Knap */
 .knap{
     display: flex;
@@ -453,7 +461,6 @@ section{
         margin-top: 10px;
     }
     .guide_text{
-        border-radius: 6px;
         width: 70%;
     }
     .guide_side_img{
@@ -461,6 +468,7 @@ section{
         justify-content: center;
         width: 30%;
         padding: 10px;
+        margin: 30px 0;
 
     }
     .guide_side_img img{
@@ -603,9 +611,6 @@ section{
     cursor: pointer;
     transition: 0.5s;
 }
-.klasser .ikon:hover{
-    background-color:#ffa6b6;
-}
 .klasser .ikon p{
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -646,6 +651,9 @@ section{
     }
 }
 @media screen and (min-width:700px) {
+    .klasser .ikon:hover{
+        background-color:#ffa6b6;
+    }
     .karakter{
         display: flex;
         gap: 20px;
