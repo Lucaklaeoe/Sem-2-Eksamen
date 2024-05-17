@@ -15,18 +15,24 @@ body{
 /* Reset */
 
 :root{
-/* Vision */
-    --icon_baggrund: #ffa6b6dc ;
-/* Vision */
 
-/* Footer */
-        --footer-green: #53806A;
-        --footer-credits: #3c5d4d;
-        --footer-color: #fff;
- /* Footer */
+    --karakter_outline: #53806A ;
 }
 
-/* Karakter Ark */
+
+.karakterark_container {
+    border: 1px solid black;
+}
+
+
+.karakterark_container h1{
+    font-family: "Cinzel Decorative", serif;
+    font-style: normal;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid black;
+
+}
 
 .karakter_kasse {
     display: flex;
@@ -43,6 +49,7 @@ body{
 .info {
    gap: 15px;
    text-align: center;
+   padding: px;
 }
 
 .liste {
@@ -55,7 +62,7 @@ body{
 
 .karakter_kasse {
     margin: 20px;
-    border: solid 2px var(--icon_baggrund);
+    border: solid 2px var(--karakter_outline);
     padding: 10px;
 }
 
@@ -74,8 +81,53 @@ body{
     border: 1px solid #000000;
     border-radius: 4px;
     font-size: 14px;
+    text-align: center;
 }
 
+
+
+
+/* amor and shit */
+
+.basic_stats_container{
+    margin: 15px;
+    padding: 10px;
+    border: solid 2px var(--karakter_outline);
+}
+
+.big{
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 4px 4px 0px 0px ;
+    font-size: 20px;
+}
+
+.small{
+    padding: 6px;
+    border: 1px solid #000000;
+    border-radius: 0 0px 20px 20px;
+    font-size: 17px;
+}
+
+.basic_stats_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px; /* Just an example, you can adjust the gap between the boxes */
+}
+
+.basic_stats_kasse {
+    background: #ffffff; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* amor and shit */
 
 .boks-container {
     display: flex;
@@ -86,7 +138,7 @@ body{
 .container{
     margin: 15px;
     padding: 10px;
-    border: solid 2px var(--icon_baggrund);
+    border: solid 2px var(--karakter_outline);
 }
 
 .circle {
