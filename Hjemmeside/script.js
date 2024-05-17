@@ -24,18 +24,26 @@ const arrow = document.getElementById("arrow");
 window.onscroll = function() {
     //hvis gemte scroll er højrer end nuværende scroll
     //scroll up                bliver nede hvis du er i toppen
-    if(progressbar){
+    if(navbar){
         if(oldScroll > scrollY || scrollY < 60){
             navbar.style.top = "0px";
-            progressbar.style.top = "69px";
+
+            if(progressbar){
+                progressbar.style.top = "69px";
+            }
         }
         //scroll down
         else{
             navbar.style.top = "-70px";
-            progressbar.style.top = "0px";
+            
+            if(progressbar){
+                progressbar.style.top = "0px";
+            }
         }
-        //User journey progress bar, when scroll
-        progress.style.width = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + "%";
+        if(progressbar){
+            //User journey progress bar, when scroll
+            progress.style.width = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + "%";
+        }
     }
     
     //lukker navbar hvis den er åben
@@ -59,8 +67,6 @@ function scrollPage() {
     });
 }
 
-
-
 //kode til Race beskrivelse
 const race_tekst = document.getElementById("race_tekst");
 const race_overskrift = document.getElementById("race_overskrift");
@@ -68,47 +74,44 @@ var gammel_tekst;
  //tekst swap ved racer herunder
 function swapText2(newText) {
     //ændrer tekst
-    if (newText == gammel_tekst){
-        race_overskrift.innerText="Hvad er classes?";
-        race_tekst.innerText="Der er flere racer at vælge imellem når man skal bygge en karakter. Det gør ofte ikke den store forskel hvilken race man vælger. Vi har valgt de mest normale. Hvis du er tvivl - så spørg din DM om hvilke racer I spiller med."; 
-    }
-    else if(newText == "reset"){
+
+    if(newText == "reset" || newText == gammel_tekst){
         race_overskrift.innerText = "Hvad er classes?";
        race_tekst.innerText="Der er flere racer at vælge imellem når man skal bygge en karakter. Det gør ofte ikke den store forskel hvilken race man vælger. Vi har valgt de mest normale. Hvis du er tvivl - så spørg din DM om hvilke racer I spiller med."; 
     
     }
     else if (newText == "Gnom") {
         race_overskrift.innerText="Gnom";
-        race_tekst.innerHTML=" Forbedring af evneniveau: Dit intelligensniveau øges med 2. <br>Alder: Gnomer modnes som mennesker og bliver voksne omkring 40 år. De kan leve op til næsten 500 år.<Størrelbr> se: Gnomer er 3-4 fod høje og vejer typisk 40 pund. De er små i størrelse. <br>Hastighed: Grundlæggende ganghastighed er 25 fod. <br>Mørkesyn: Gnomer har overlegen vision i mørke og svagt oplyste områder, kan se i svagt lys op til 60 fod væk og i mørke som svagt oplyst. De ser kun nuancer af gråt i mørket. <br>Gnom Snilde: Gnomer har fordel på redninger mod magi vedrørende intelligens, visdom og karisma. <br>Sprog: Gnomer taler, læser og skriver Common og Gnom. Gnomisk, skrevet med dværgisk alfabet, er kendt for tekniske afhandlinger og viden om naturen."; 
+        race_tekst.innerHTML="<b>Forbedring af evneniveau:</b> Dit intelligensniveau øges med 2. <br><b>Alder:</b> Gnomer modnes som mennesker og bliver voksne omkring 40 år. De kan leve op til næsten 500 år.<Størrelbr> se: Gnomer er 3-4 fod høje og vejer typisk 40 pund. De er små i størrelse. <br><b>Hastighed:</b> Grundlæggende ganghastighed er 25 fod. <br><b>Mørkesyn:</b> Gnomer har overlegen vision i mørke og svagt oplyste områder, kan se i svagt lys op til 60 fod væk og i mørke som svagt oplyst. De ser kun nuancer af gråt i mørket. <br><b>Gnom Snilde:</b> Gnomer har fordel på redninger mod magi vedrørende intelligens, visdom og karisma. <br><b>Sprog:</b> Gnomer taler, læser og skriver Common og Gnom. Gnomisk, skrevet med dværgisk alfabet, er kendt for tekniske afhandlinger og viden om naturen."; 
     }
     else if (newText == "Hobbit") {
         race_overskrift.innerText="Hobbit";
-        race_tekst.innerHTML=" Evneniveau: Din Smidighed stiger med 2. <br>Alder: Hobitter når voksenalderen ved 20 år og kan leve omkring 250 år.<br>Størrelse: Hobitter er typisk 3 fod høje og vejer ca. 40 pund. De er små. <br>Hastighed: Din grundlæggende ganghastighed er 25 fod. >br>Held: Ved at kaste en 1 på en D20 kan du genkaste terningen og bruge det nye resultat. <br>Mod: Du har fordel på redninger mod at blive forskrækket. <br>Smidighed: Du kan bevæge dig ubemærket omkring større skabninger. <br>Sprog: Du taler, læser og skriver Common og Hobbit. Hobbit-sproget deles sjældent med andre og har en stærk mundtlig tradition. "; 
+        race_tekst.innerHTML=" <b>Evneniveau:</b> Din Smidighed stiger med 2. <br><b>Alder:</b> Hobitter når voksenalderen ved 20 år og kan leve omkring 250 år.<br><b>Størrelse:</b> Hobitter er typisk 3 fod høje og vejer ca. 40 pund. De er små. <br><b>Hastighed:</b> Din grundlæggende ganghastighed er 25 fod. >br>Held: Ved at kaste en 1 på en D20 kan du genkaste terningen og bruge det nye resultat. <br>Mod: Du har fordel på redninger mod at blive forskrækket. <br><b>Smidighed:</b> Du kan bevæge dig ubemærket omkring større skabninger. <br><b>Sprog:</b> Du taler, læser og skriver Common og Hobbit. Hobbit-sproget deles sjældent med andre og har en stærk mundtlig tradition. "; 
     }
 
     else if (newText == "Tiefling") {
         race_overskrift.innerText="Tiefling";
-        race_tekst.innerHTML=" Evneniveau: Din intelligens stiger med 1, og din karisma stiger med 2. <br>Alder: Tieflings modnes som mennesker, men lever lidt længere. <br>Størrelse: Tieflings er omtrent samme størrelse som mennesker. Du er Medium. <br>Hastighed: Din basisganghastighed er 30 fod. <br>Mørkesyn: Takket være din infernalske arv har du overlegen syn i mørke og svagt oplyste områder. <br>Helvedes Modstand: Du er resistent over for brandskader.<br>Infernalt Eftermæle: Du kender thaumaturgy cantrip'en og kan kaste Helvedes Reprimande og Mørke magi som en del af dine evner, brugende karisma som din trylleformular.<br>Sprog: Du taler, læser og skriver Common og Infernalsk."; 
+        race_tekst.innerHTML=" <b>Evneniveau:</b> Din intelligens stiger med 1, og din karisma stiger med 2. <br><b>Alder:</b> Tieflings modnes som mennesker, men lever lidt længere. <br><b>Størrelse:</b> Tieflings er omtrent samme størrelse som mennesker. Du er Medium. <br><b>Hastighed:</b> Din basisganghastighed er 30 fod. <br><b>Mørkesyn:</b> Takket være din infernalske arv har du overlegen syn i mørke og svagt oplyste områder. <br><b>Helvedes Modstand:</b> Du er resistent over for brandskader.<br><b>Infernalt Eftermæle:</b> Du kender thaumaturgy cantrip'en og kan kaste Helvedes Reprimande og Mørke magi som en del af dine evner, brugende karisma som din trylleformular.<br><b>Sprog:</b> Du taler, læser og skriver Common og Infernalsk."; 
     }
     else if (newText == "Dværg") {
         race_overskrift.innerText="Dværg";
-        race_tekst.innerHTML="Evneniveau: Din Konstitution stiger med 2. <br>Alder: Dværge modnes som mennesker, betragtes unge indtil 50 og lever i gennemsnit omkring 350 år. <br>Størrelse: Dværge er 4-5 fod høje og vejer i gennemsnit 150 pund. Du er Medium. <br>Hastighed: Din basis ganghastighed er 25 fod, ikke påvirket af tung rustning. <br>Mørkesyn: Du har overlegen syn i mørke og svagt oplyste områder. <br>Udholdenhed: Du har fordel på redninger mod gift og er resistent over for giftskader. <br>Kamptræning: Dygtig med slagøkser, håndøkser, lette hamre og krigshamre. <br>Værktøjsfærdighed: Du er dygtig med håndværkerens værktøjer som smedens, bryggerens eller murerens. <br>Stenkundskab: Kyndig i historie relateret til stenarbejde, tilføjer dobbelt din færdighedsbonus til relevante checks. <br>Sprog: Du taler, læser og skriver Common og Dværge. Dværgesprog er hårdt og gutturalt."; 
+        race_tekst.innerHTML="<b>Evneniveau:</b> Din Konstitution stiger med 2. <br><b>Alder:</b> Dværge modnes som mennesker, betragtes unge indtil 50 og lever i gennemsnit omkring 350 år. <br><b>Størrelse:</b> Dværge er 4-5 fod høje og vejer i gennemsnit 150 pund. Du er Medium. <br><b>Hastighed:</b> Din basis ganghastighed er 25 fod, ikke påvirket af tung rustning. <br><b>Mørkesyn:</b> Du har overlegen syn i mørke og svagt oplyste områder. <br>Udholdenhed: Du har fordel på redninger mod gift og er resistent over for giftskader. <br><b>Kamptræning:</b> Dygtig med slagøkser, håndøkser, lette hamre og krigshamre. <br><b>Værktøjsfærdighed:</b> Du er dygtig med håndværkerens værktøjer som smedens, bryggerens eller murerens. <br><b>Stenkundskab:</b> Kyndig i historie relateret til stenarbejde, tilføjer dobbelt din færdighedsbonus til relevante checks. <br><b>Sprog:</b> Du taler, læser og skriver Common og Dværge. Dværgesprog er hårdt og gutturalt."; 
     }
     else if (newText == "Menneske") {
         race_overskrift.innerText="Menneske";
-        race_tekst.innerHTML="Evneniveau: Alle dine evneniveauer stiger med 1. <br>Alder: Mennesker når voksenalderen i deres sene teenageår og lever mindre end et århundrede. <br>Størrelse: Mennesker varierer i højde fra knap 5 fod til over 6 fod. Du er Medium. <br>Hastighed: Din basisganghastighed er 30 fod. <br>Sprog: Udover Common kan du tale, læse og skrive et ekstra sprog efter eget valg. Mennesker lærer typisk sprogene fra de folk, de omgås, og integrerer ofte ord og udtryk fra andre kulturer i deres tale."; 
+        race_tekst.innerHTML="<b>Evneniveau:</b> Alle dine evneniveauer stiger med 1. <br><b>Alder:</b> Mennesker når voksenalderen i deres sene teenageår og lever mindre end et århundrede. <br><b>Størrelse:</b> Mennesker varierer i højde fra knap 5 fod til over 6 fod. Du er Medium. <br><b>Hastighed:</b> Din basisganghastighed er 30 fod. <br><b>Sprog:</b> Udover Common kan du tale, læse og skrive et ekstra sprog efter eget valg. Mennesker lærer typisk sprogene fra de folk, de omgås, og integrerer ofte ord og udtryk fra andre kulturer i deres tale."; 
     }
     else if (newText == "Elver") {
         race_overskrift.innerText="Elver";
-        race_tekst.innerHTML="Evneniveau: Din Smidighed øges med 2. <br>Alder: Elvere modnes som mennesker, tager voksenstatus omkring 100 år og lever op til 750 år. <br>Størrelse: Elvere varierer i højde og har slanke bygninger. Du er Medium. <br>Hastighed: Din basisganghastighed er 30 fod. <br>Mørkesyn: Du har overlegen vision i mørke og svagt oplyste områder.<br>Skarpe Sanser: Dygtig i Fornemmelse færdigheden.<br>Fey Ancestry: Immun over for fortryllelse og magi kan ikke få dig til at sove.<br>Trance: Mediterer i 4 timer om dagen og får samme fordele som 8 timers søvn.<br>Sprog: Udover Common taler, læser og skriver du Elvish. Elvish er flydende med rig litteratur."; 
+        race_tekst.innerHTML="<b>Evneniveau:</b> Din Smidighed øges med 2. <br><b>Alder:</b> Elvere modnes som mennesker, tager voksenstatus omkring 100 år og lever op til 750 år. <br><b>Størrelse:</b> Elvere varierer i højde og har slanke bygninger. Du er Medium. <br><b>Hastighed:</b> Din basisganghastighed er 30 fod. <br><b>Mørkesyn:</b> Du har overlegen vision i mørke og svagt oplyste områder.<br>Skarpe Sanser: Dygtig i Fornemmelse færdigheden.<br><b>Fey Ancestry:</b> Immun over for fortryllelse og magi kan ikke få dig til at sove.<br><b>Trance:</b> Mediterer i 4 timer om dagen og får samme fordele som 8 timers søvn.<br><b>Sprog:</b> Udover Common taler, læser og skriver du Elvish. Elvish er flydende med rig litteratur."; 
     }
     else if (newText == "Halv_Elver") {
         race_overskrift.innerText="Halv Elver";
-        race_tekst.innerHTML="Evneniveau: Dit karisma stiger med 2, og to andre stats efter eget valg stiger med 1.<br>Alder: Halv-elvere modnes som mennesker og lever ofte over 180 år.<br>Størrelse: Cirka samme størrelse som mennesker, 5 til 6 fod høj. Du er Medium.<br>Hastighed: Din basis ganghastighed er 30 fod.<br>Mørkesyn: Overlegen syn i mørke og svagt oplyste områder.<br>Fey Ancestry: Immun over for fortryllelse, kan ikke søvnmagi påvirke dig.<br> Færdighedsfleksibilitet: Får færdighed i to valgte færdigheder.<br>Sprog: Udover Common, taler, læser og skriver du Elvish og et ekstra sprog efter eget valg."; 
+        race_tekst.innerHTML="<b>Evneniveau:</b> Dit karisma stiger med 2, og to andre stats efter eget valg stiger med 1.<br><b>Alder:</b> Halv-elvere modnes som mennesker og lever ofte over 180 år.<br><b>Størrelse:</b> Cirka samme størrelse som mennesker, 5 til 6 fod høj. Du er Medium.<br><b>Hastighed:</b> Din basis ganghastighed er 30 fod.<br><b>Mørkesyn:</b> Overlegen syn i mørke og svagt oplyste områder.<br><b>Fey Ancestry:</b> Immun over for fortryllelse, kan ikke søvnmagi påvirke dig.<br> <b>Færdighedsfleksibilitet:</b> Får færdighed i to valgte færdigheder.<br><b>Sprog:</b> Udover Common, taler, læser og skriver du Elvish og et ekstra sprog efter eget valg."; 
     }
     else if (newText == "Halv_Ork") {
         race_overskrift.innerText="Halv Ork ";
-        race_tekst.innerHTML="Evneniveau: Din styrke stiger med 2, og din konstitution stiger med 1.<br>Alder: Halv-orker modnes hurtigere end mennesker og lever sjældent over 75 år.<br>Størrelse: Lidt større og kraftigere end mennesker, 5 til over 6 fod høj. Du er Medium.<br>Hastighed: Din basis ganghastighed er 30 fod.<br>Mørkesyn: Overlegen syn i mørke og svagt oplyste områder.<br>Truende: Dygtig i intimidation.<br>Urokkelig Udholdenhed: Ved at falde til 0 hit points kan du i stedet falde til 1 hit point, men kun en gang før en lang hvile.<br>Voldsomme Angreb: Ved et kritisk slag med et melee våben kan du kaste en ekstra skadeterning.<br>Sprog: Udover Common, taler, læser og skriver du Ork. Ork er barsk og skrives på dværgisk skrift."; 
+        race_tekst.innerHTML="<b>Evneniveau:</b> Din styrke stiger med 2, og din konstitution stiger med 1.<br><b>Alder:</b> Halv-orker modnes hurtigere end mennesker og lever sjældent over 75 år.<br><b>Størrelse:</b> Lidt større og kraftigere end mennesker, 5 til over 6 fod høj. Du er Medium.<br><b>Hastighed:</b> Din basis ganghastighed er 30 fod.<br><b>Mørkesyn:</b> Overlegen syn i mørke og svagt oplyste områder.<br><b>Truende:</b> Dygtig i intimidation.<br><b>Urokkelig Udholdenhed:</b> Ved at falde til 0 hit points kan du i stedet falde til 1 hit point, men kun en gang før en lang hvile.<br><b>Voldsomme Angreb:</b> Ved et kritisk slag med et melee våben kan du kaste en ekstra skadeterning.<br><b>Sprog:</b> Udover Common, taler, læser og skriver du Ork. Ork er barsk og skrives på dværgisk skrift."; 
     }
 ;
 
@@ -216,13 +219,13 @@ function Rolldice(dice){
     const the_dice = document.getElementById(dice)
     const dice_img = document.getElementById(dice + 'dice');
     const randomnumber = Math.floor(Math.random() * dice.split("D")[1] + 1);
-    the_dice.style.fontSize = "0px";
+    the_dice.style.transform = "translate(-50%, -50%) scale(0)";
     dice_img.style.transition = "ease-in-out 1s";
     dice_img.style.transform = 'rotate(360deg)';
 
     setTimeout(function(){
         the_dice.textContent = randomnumber;
-        the_dice.style.fontSize = "1.5em";
+        the_dice.style.transform = "translate(-50%, -50%) scale(1)";
 
         dice_img.style.transition = "0s";
         dice_img.style.transform = 'rotate(0deg)';
@@ -237,11 +240,19 @@ function popup(video, overskrift){
     if(video == "reset"){
         popup_element.style.top = "150%";
         video_element.setAttribute("src", null);
+        //fjern autoplay
+        video_element.removeAttribute("autoplay")
     }
     else{
         video_element.setAttribute("src", "forklarings_videoer/" + video);
         popup_element.style.top = "50%";
         popup_overskrift.innerText = overskrift;
+
+        //set autoplay efter animation
+        setTimeout(function(){
+            video_element.setAttribute("autoplay","autoplay");
+            video_element.load();
+        },1500);
     }
 };
 
