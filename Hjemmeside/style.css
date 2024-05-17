@@ -747,17 +747,14 @@ section{
 /* spilleside start*/
 .terninger{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
-    gap: 20px;
-
-    overflow-y: hidden;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    padding: 10px 0;
+    gap: 10px;
 }
 .terning{
-    scroll-snap-align: start;
     position: relative;
-    padding: 0 10px;
+    padding: 0 0px;
     cursor: pointer;
 }
 .terning p{
@@ -775,6 +772,9 @@ section{
     width: 100px;
     transition:ease-in-out 0.5;
 }
+.terning_overskrift{
+    border-bottom: 3px solid var(--linje-text-adskiller);
+}
 
 .spilside_bund{
     display: flex;
@@ -790,6 +790,15 @@ section{
 .Buttom_img img{
     width: 100%;
     border-radius: 6px;
+}
+@media screen and (min-width: 520px){
+    .terning{
+        padding: 0 10px;
+    }
+    .terninger{
+        padding: 30px;
+        gap: 20px;
+    }
 }
 
 @media screen and (min-width: 700px){
@@ -812,6 +821,16 @@ section{
     }
     .spilside_top div p{
         width: 50%;
+    }
+}
+@media screen and (min-width: 980px){
+    .terning{
+        margin: 0 20px;
+    }
+}
+@media screen and (min-width: 1240px){
+    .terning{
+        margin: 0;
     }
 }
 /* spilleside slut*/
