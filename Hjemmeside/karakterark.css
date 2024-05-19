@@ -133,6 +133,24 @@ body{
     flex-direction: column;
 }
 
+/* Attack and spellcasting */
+
+.attack_spellcasting{
+    margin: 20px;
+    border: solid 2px var(--karakter_outline);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+}
+
+.attack_spellcasting label{
+    font-size: 11px;
+}
+
+/* Attack and spellcasting */
+
 
 /* amor/initiative/speed */
 
@@ -215,6 +233,12 @@ body{
     .container{
         width: 50%;
         margin-left: 10px;
+    }
+
+    .input-container {
+        padding: 0 0 10px 15px;
+        border-radius: 4px;
+       
     }
 }
 

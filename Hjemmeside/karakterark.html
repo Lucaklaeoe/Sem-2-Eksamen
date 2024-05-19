@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="karakterark.css">
 </head>
 <body>
-    
+
 <div class="karakterark_wrapper">
     <div class="karakterark_container">
     <h1>Character Sheet - Karakter Ark</h1>
@@ -16,10 +16,10 @@
         
         <div class="hp">
             <label for="hp-input" class="label hp">HP</label>
-            <input type="text" id="input" class="input-box "> 
+            <input type="number" id="input" class="input-box "> 
 
             <label for="gp-input" class="label gp">Guld</label>
-            <input type="text" id="input" class="input-box"> 
+            <input type="number" id="input" class="input-box"> 
         </div>
 
        
@@ -39,15 +39,15 @@
    <div class="karakter_kasse info amor">
         <div class="input-wrapper">
             <label for="amor-input" class="label">Amor</label>
-            <input type="text" id="amor-input" class="input-box">
+            <input type="number" id="amor-input" class="input-box">
         </div>
         <div class="input-wrapper">
             <label for="initiative-input" class="label">Initiative</label>
-            <input type="text" id="initiative-input" class="input-box">
+            <input type="number" id="initiative-input" class="input-box">
         </div>
         <div class="input-wrapper">
             <label for="speed-input" class="label">Speed</label>
-            <input type="text" id="speed-input" class="input-box">
+            <input type="number" id="speed-input" class="input-box">
         </div>
     </div>   
 
@@ -111,8 +111,24 @@
                 </div>
             </div> 
         </div>
+
+     
+    </div>  
+     <div class="attack_spellcasting">
+            <div class="input-wrapper">
+                <label for="amor-input" class="label">NAME</label>
+                <input type="text" id="name-input" class="input-box">
+            </div>
+            <div class="input-wrapper">
+                <label for="initiative-input" class="label">ATK BONUS</label>
+                <input type="number" id="atk-bonus-input" class="input-box">
+            </div>
+            <div class="input-wrapper">
+                <label for="speed-input" class="label">DAMAGE/TYPE</label>
+                <input type="text" id="damage" class="input-box">
+            </div>
+        </div> 
     
-    </div>
 </div>
 
 
