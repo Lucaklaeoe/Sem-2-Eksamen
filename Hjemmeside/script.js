@@ -310,3 +310,37 @@ if(Navn){
         });
     };
 };
+
+//finder input felterne
+const save_data_points = document.querySelectorAll(".save_data");
+
+//på ændring af et input felt, gem ændringerne
+save_data_points.forEach(data_point => {
+    data_point.addEventListener('change', save_karaktarark_data);
+});
+
+//funktionen for at gemme ændringerne
+function save_karaktarark_data(){
+    const data = {};
+    
+
+    save_data_points.forEach(data_point => {
+        data[data_point.id] = data_point.value;
+    });
+
+    //vi bruger localstorage for at gemme 
+    //vi gemmer et object så vi skal bruge JSON.stringify
+    localStorage.setItem("prev_data_points", JSON.stringify(data));
+}
+
+//funktionen for at indlæse den gemte data
+function load_karakterark_data(){
+    const saved_data = localStorage.getItem("prev_data_points");
+    //er der noget gemt data hvis ja indæls det
+    if(saved_data != null || saved_data != undefined){
+        save_data_points.forEach(data_point => {
+            data_point.value = JSON.parse(saved_data)[data_point.id]
+        });
+    };
+};
+load_karakterark_data();

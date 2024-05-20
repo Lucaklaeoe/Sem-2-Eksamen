@@ -21,7 +21,7 @@ body{
 
 
 
-/* Karakter Art */
+/* Karakter Art start*/
 
 .karakterark_wrapper{
     display: flex;
@@ -64,14 +64,11 @@ body{
     flex-direction: column;
 }
 
-
-
 .karakter_kasse {
     margin: 20px;
     border: solid 2px var(--karakter_outline);
     padding: 10px;
 }
-
 
 .label {
     display: block;
@@ -89,9 +86,6 @@ body{
     font-size: 14px;
     text-align: center;
 }
-
-
-
 
 /* amor/initiative/speed */
 
@@ -166,7 +160,6 @@ body{
     border: solid 2px var(--karakter_outline);
 }
 
-
 .circle {
     width: 20px;
     height: 20px;
@@ -229,12 +222,10 @@ body{
         flex-direction: row;
     
     }
-
     .container{
         width: 50%;
         margin-left: 10px;
     }
-
     .input-container {
         padding: 0 0 10px 15px;
         border-radius: 4px;
@@ -242,4 +233,4 @@ body{
     }
 }
 
-/* Karakter Ark */
+/* Karakter Ark slut*/
