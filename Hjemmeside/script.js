@@ -313,6 +313,7 @@ if(Navn){
 
 //finder input felterne
 const save_data_points = document.querySelectorAll(".save_data");
+const save_data_filled_dots = document.querySelectorAll(".circle");
 
 //på ændring af et input felt, gem ændringerne
 save_data_points.forEach(data_point => {
@@ -322,25 +323,43 @@ save_data_points.forEach(data_point => {
 //funktionen for at gemme ændringerne
 function save_karaktarark_data(){
     const data = {};
-    
+    const filled_data = {};
 
     save_data_points.forEach(data_point => {
         data[data_point.id] = data_point.value;
     });
 
+    save_data_filled_dots.forEach(data_dots => {
+        if(data_dots.classList != "circle"){
+            filled_data[data_dots.id] = true;
+        }
+        else{
+            filled_data[data_dots.id] = false;
+        }
+    });
+
     //vi bruger localstorage for at gemme 
     //vi gemmer et object så vi skal bruge JSON.stringify
     localStorage.setItem("prev_data_points", JSON.stringify(data));
+    localStorage.setItem("prev_data_dots", JSON.stringify(filled_data));
 }
 
 //funktionen for at indlæse den gemte data
 function load_karakterark_data(){
     const saved_data = localStorage.getItem("prev_data_points");
+    const saved_data_dots = localStorage.getItem("prev_data_dots");
+
     //er der noget gemt data hvis ja indæls det
     if(saved_data != null || saved_data != undefined){
         save_data_points.forEach(data_point => {
             data_point.value = JSON.parse(saved_data)[data_point.id]
         });
     };
+
+    save_data_filled_dots.forEach(data_dots => {
+        if(JSON.parse(saved_data_dots)[data_dots.id]){
+            data_dots.classList = "circle filled";
+        };
+    });
 };
 load_karakterark_data();
