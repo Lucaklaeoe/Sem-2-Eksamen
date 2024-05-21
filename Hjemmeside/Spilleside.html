@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Din DnD - spilleside</title>
+    <title>Din DnD - Spilleside</title>
     <link rel="icon" href="icon.png">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="spilleside.css">
 </head>
 <body>
      <!-- Nav bar -->
@@ -25,57 +24,327 @@
                 </div>
                 <div id="nav_liste" class="nav_liste_box">
                     <ul class="Nav_liste">
-                        <li><a href="index.html">Forside</a></li>
+                        <li><a href="index.html">Start</a></li>
                         <li><a href="bygkarakter.html">Karakter guide</a></li>
-                        <li><a href="Spilleside.html">Spil</a></li>
-                        <li><a href="">vores vision</a></li>
+                        <li class="Current_nav"><a href="Spilleside.html">Spil</a></li>
+                        <li><a href="voresvision.html">Vores vision</a></li>
                         <li><a href="kontakt.html">kontakt</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
+    <div id="progressbar" class="progressbar">
+        <div id="progress" class="filled"></div>
+    </div>
     <!-- Nav bar -->
     <!-- Header -->
     <header class="stop header_underside">
-        <div class="headerimg_underside">
+        <div class="headerimg_underside stop_early">
             <h1>Spilleside</h1>
         </div>
     </header>
     <!-- Header -->
 
     <main>
-        <section class="terninger stop">
-            <div onclick="Rolldice('D4')" class="terning">
-                <img id="D4dice" src="terninger/D4.png" alt="">
-                <p id="D4">4</p>
+        <section class="stop">
+            <h2 class="stop_early terning_overskrift">Terninger - Tryk for at rolle</h2>
+            <div class="terninger">
+                <div onclick="Rolldice('D4')" class="terning">
+                    <img id="D4dice" src="terninger/D4.png" alt="">
+                    <p id="D4">4</p>
+                </div>
+                <div onclick="Rolldice('D6')" class="terning">
+                    <img id="D6dice" src="terninger/D6.png" alt="">
+                    <p id="D6">6</p>
+                </div>
+                <div onclick="Rolldice('D8')" class="terning">
+                    <img id="D8dice" src="terninger/D8.png" alt="">
+                    <p id="D8">8</p>
+                </div>
+                <div onclick="Rolldice('D10')" class="terning">
+                    <img id="D10dice" src="terninger/D10.png" alt="">
+                    <p id="D10">10</p>
+                </div>
+                <div onclick="Rolldice('D12')" class="terning">
+                    <img id="D12dice" src="terninger/D12.png" alt="">
+                    <p id="D12">12</p>
+                </div>
+                <div onclick="Rolldice('D20')" class="terning">
+                    <img id="D20dice" src="terninger/D20.png" alt="">
+                    <p id="D20">20</p>
+                </div>
             </div>
-            <div onclick="Rolldice('D6')" class="terning">
-                <img id="D6dice" src="terninger/D6.png" alt="">
-                <p id="D6">6</p>
-            </div>
-            <div onclick="Rolldice('D8')" class="terning">
-                <img id="D8dice" src="terninger/D8.png" alt="">
-                <p id="D8">8</p>
-            </div>
-            <div onclick="Rolldice('D10')" class="terning">
-                <img id="D10dice" src="terninger/D10.png" alt="">
-                <p id="D10">10</p>
-            </div>
-            <div onclick="Rolldice('D12')" class="terning">
-                <img id="D12dice" src="terninger/D12.png" alt="">
-                <p id="D12">12</p>
-            </div>
-            <div onclick="Rolldice('D20')" class="terning">
-                <img id="D20dice" src="terninger/D20.png" alt="">
-                <p id="D20">20</p>
-            </div>
-            <!-- Skup ikke til -->
-            <div class="terning"></div>
         </section>
 
-        <section class="stop_early">
-
+        <section class="stop_early center">
+            <div class="karakterark_wrapper">
+                <div class="karakterark_container">
+                <h1>Character Sheet - Karakter Ark</h1>
+                <div class="karakter_kasse">
+                    
+                    <div class="hp">
+                        <label for="HP" class="label hp">HP</label>
+                        <input type="number" id="HP" class="input-box save_data"> 
+            
+                        <label for="GP" class="label gp">Guld</label>
+                        <input type="number" id="GP" class="input-box save_data"> 
+                    </div>
+            
+                   
+                    
+                    <div class="liste">
+                        <label for="name" class="label">Navn</label>
+                        <input type="text" id="name" class="input-box save_data">
+            
+                        <label for="class" class="label">Class</label>
+                        <input type="text" id="class" class="input-box save_data">
+            
+                        <label for="race" class="label">Race</label>
+                        <input type="text" id="race" class="input-box save_data">
+                    </div>
+                </div>
+            
+               <div class="karakter_kasse info amor">
+                    <div class="input-wrapper">
+                        <label for="amor" class="label">Amor</label>
+                        <input type="number" id="amor" class="input-box save_data">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="initiative" class="label">Initiative</label>
+                        <input type="number" id="initiative" class="input-box save_data">
+                    </div>
+                    <div class="input-wrapper">
+                        <label for="speed" class="label">Speed</label>
+                        <input type="number" id="speed" class="input-box save_data">
+                    </div>
+                </div>   
+            
+                <div class="basic_stats_container">
+                    <div class="basic_stats_kasse ">
+                        <div class="basic_stats info">
+                            <div class="input-wrapper basic_stats">
+                            <label class="label">Styrke</label>
+                            <input type="text" id="Styrke1" class="input-box basic_stats big save_data">
+                            <input type="text" id="Styrke2" class="input-box basic_stats small save_data">
+                            </div>
+                        </div> 
+                    </div>
+                
+                    <div class="basic_stats_kasse ">
+                        <div class="basic_stats info">
+                            <div class="input-wrapper basic_stats">
+                            <label class="label">Fingerfærdighed</label>
+                            <input type="text" id="Fingerfærdighed1" class="input-box basic_stats big save_data">
+                            <input type="text" id="Fingerfærdighed2" class="input-box basic_stats small save_data">
+                            </div>
+                        </div> 
+                    </div>
+                
+                    <div class="basic_stats_kasse ">
+                        <div class="basic_stats info">
+                            <div class="input-wrapper basic_stats">
+                            <label class="label">Udholdenhed</label>
+                            <input type="text" id="konstitution1" class="input-box basic_stats big save_data">
+                            <input type="text" id="konstitution2" class="input-box basic_stats small save_data">
+                            </div>
+                        </div> 
+                    </div>
+                
+                    <div class="basic_stats_kasse ">
+                        <div class="basic_stats info">
+                            <div class="input-wrapper basic_stats">
+                            <label class="label">Intelligens</label>
+                            <input type="text" id="Intelligens1" class="input-box basic_stats big save_data">
+                            <input type="text" id="Intelligens2" class="input-box basic_stats small save_data">
+                            </div>
+                        </div> 
+                    </div>
+                
+                    <div class="basic_stats_kasse ">
+                        <div class="basic_stats info">
+                            <div class="input-wrapper basic_stats">
+                            <label class="label">Visdom</label>
+                            <input type="text" id="visdom1" class="input-box basic_stats big save_data">
+                            <input type="text" id="visdom2" class="input-box basic_stats small save_data">
+                            </div>
+                        </div> 
+                    </div>
+                
+                    <div class="basic_stats_kasse ">
+                        <div class="basic_stats info">
+                            <div class="input-wrapper basic_stats">
+                            <label class="label">Karisma</label>
+                            <input type="text" id="karisma1" class="input-box basic_stats big save_data">
+                            <input type="text" id="karisma2" class="input-box basic_stats small save_data">
+                            </div>
+                        </div> 
+                    </div>
+            
+                 
+                </div>  
+                    <div class="attack_spellcasting">
+                        <div class="input-wrapper">
+                            <label class="label">NAME</label>
+                            <input type="text" id="atk_input_name1" class="input-box save_data">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="label">ATK BONUS</label>
+                            <input id="atk_input_bonus1" class="input-box save_data">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="label">DAMAGE/TYPE</label>
+                            <input type="text" id="atk_input_dmg1" class="input-box save_data">
+                        </div>
+                    </div> 
+                    <div class="attack_spellcasting">
+                        <div class="input-wrapper">
+                            <label class="label">NAME</label>
+                            <input type="text" id="atk_input_name2" class="input-box save_data">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="label">ATK BONUS</label>
+                            <input id="atk_input_bonus2" class="input-box save_data">
+                        </div>
+                        <div class="input-wrapper">
+                            <label class="label">DAMAGE/TYPE</label>
+                            <input type="text" id="atk_input_dmg2" class="input-box save_data">
+                        </div>
+                    </div>
+                </div>
+            
+            
+                <div class="container listen">
+            
+                    <div class="boks-container">
+                        <div id="circle1" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Acrobatics" class="skill-input-box save_data">
+                            <span class="fixed-text">Acrobatics (Dext)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle2" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Animali" class="skill-input-box save_data">
+                            <span class="fixed-text">Animali Handling (Wis)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle3" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Arcana" class="skill-input-box save_data">
+                            <span class="fixed-text">Arcana (Int)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle4" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Athletics" class="skill-input-box save_data">
+                            <span class="fixed-text">Athletics (Str)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle5" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Deception" class="skill-input-box save_data">
+                            <span class="fixed-text">Deception (Cha)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle6" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="History" class="skill-input-box save_data">
+                            <span class="fixed-text">History (Int)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle7" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Insight" class="skill-input-box save_data">
+                            <span class="fixed-text">Insight (Wis)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle8" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Intimidation" class="skill-input-box save_data">
+                            <span class="fixed-text">Intimidation (Cha)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle9" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Investigation" class="skill-input-box save_data">
+                            <span class="fixed-text">Investigation (Int)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle10" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Medicin" class="skill-input-box save_data">
+                            <span class="fixed-text">Medicin (Wis)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle11" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Nature" class="skill-input-box save_data">
+                            <span class="fixed-text">Nature (Int)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle12" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Perception" class="skill-input-box save_data">
+                            <span class="fixed-text">Perception (Wis)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle13" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Performance" class="skill-input-box save_data">
+                            <span class="fixed-text">Performance (Cha)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle14" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Persuation" class="skill-input-box save_data">
+                            <span class="fixed-text">Persuation (Cha)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle515" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Religion" class="skill-input-box save_data">
+                            <span class="fixed-text">Religion (Int)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle16" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Sleight" class="skill-input-box save_data">
+                            <span class="fixed-text">Sleight of Hand (Dex)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle17" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Stealth" class="skill-input-box save_data">
+                            <span class="fixed-text">Stealth (Dex)</span>
+                        </div>
+                    </div>
+                    <div class="boks-container">
+                        <div id="circle18" class="circle" onclick="this.classList.toggle('filled'), save_karaktarark_data()"></div>
+                        <div class="input-container">
+                            <input type="number" id="Survival" class="skill-input-box save_data">
+                            <span class="fixed-text">Survival (Wis)</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
         </section>  
 
         <section class="pink_bagrund">
@@ -90,7 +359,9 @@
 
                 <div class="spilside_buttom">
                     <div class="Buttom_img">
-                        <img src="img/DnD-inspo.webp" alt="">
+                        <video autoplay muted repeat loop>
+                            <source src="forklarings_videoer/terning.mp4">
+                        </video>
                     </div>
                     <div class="Buttom_tekst">
                         <h2>DM vs. dig:</h2>
@@ -107,8 +378,14 @@
     </main>
 
     <main class="pink_bagrund knap">
+        <a href="bygkarakter.html">
+            <p>< Karakter guide</p>
+        </a>
+        <a href="voresvision.html">
+            <p>Vores vision ></p>
+        </a>
         <a href="kontakt.html">
-            <p>Kontakt os!</p>
+            <p>Kontakt os >></p>
         </a>
     </main>
     

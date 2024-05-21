@@ -1,0 +1,236 @@
+/* Reset */
+*{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+html{
+    overflow-x: hidden ;
+}
+body{
+    overflow-x: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+/* Reset */
+
+:root{
+
+    --karakter_outline: #53806A ;
+}
+
+
+
+/* Karakter Art start*/
+
+.karakterark_wrapper{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    max-width: 902px;
+}
+
+
+.karakterark_container h1{
+    font-family: "Cinzel Decorative", serif;
+    font-style: normal;
+    margin: 20px;
+    padding: 5px;
+    border: 2px solid black;
+
+}
+
+.karakter_kasse {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.hp {
+    flex: 1;
+    margin-right: 20px;
+
+}
+
+.info {
+   gap: 15px;
+   text-align: center;
+   
+}
+
+.liste {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.karakter_kasse {
+    margin: 20px;
+    border: solid 2px var(--karakter_outline);
+    padding: 10px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 1px;
+    font-size: 15px;
+    margin-top: 8px;
+    color: rgb(114, 114, 114);
+}
+
+.input-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* amor/initiative/speed */
+
+.basic_stats_container{
+    margin: 15px;
+    padding: 0px;
+    border: solid 2px var(--karakter_outline);
+}
+
+.big{
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 4px 4px 0px 0px ;
+    font-size: 20px;
+}
+
+.small{
+    padding: 6px;
+    border: 1px solid #000000;
+    border-radius: 0 0px 20px 20px;
+    font-size: 17px;
+}
+
+.basic_stats_container {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.basic_stats_kasse {
+    background: #ffffff; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Attack and spellcasting */
+
+.attack_spellcasting{
+    margin: 20px;
+    border: solid 2px var(--karakter_outline);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+}
+
+.attack_spellcasting label{
+    font-size: 11px;
+}
+
+/* Attack and spellcasting */
+
+
+/* amor/initiative/speed */
+
+.boks-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.container{
+    margin: 20px;
+    padding: 10px;
+    border: solid 2px var(--karakter_outline);
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    background: radial-gradient(circle, transparent 70%, white 30%);
+}
+
+.circle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s;
+}
+
+.circle.filled::after {
+    background: radial-gradient(circle, black 70%, white 30%);
+
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    padding: 0 0 5px 5px;
+    border-radius: 4px;
+    width: 90%;
+}
+
+.skill-input-box{
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 5px;
+    margin-right: 10px;
+    width: 50px; /* Sætter en fast bredde i pixels */
+    font-size: 14px;
+    flex-shrink: 0; /* Forhindrer at input-boksen skrumper */
+}
+
+.input-box-skills:focus {
+    outline: none;
+    
+}
+
+.fixed-text {
+    font-size: 14px;
+}
+
+@media (min-width: 600px) {
+    .karakterark_wrapper {
+        flex-direction: row;
+    
+    }
+    .container{
+        width: 50%;
+        margin-left: 10px;
+    }
+    .input-container {
+        padding: 0 0 10px 15px;
+        border-radius: 4px;
+       
+    }
+}
+
+/* Karakter Ark slut*/

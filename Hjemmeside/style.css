@@ -11,6 +11,7 @@ html{
 body{
     overflow-x: hidden;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.1em;
 }
 /* Reset */
 
@@ -20,9 +21,10 @@ body{
     --nav-green: #53806A;
     --nav-links: #fff;
     --nav-green-see-through: #53806acc;
-    --nav-links-hover: #b2b2b2;
+    --nav-links-hover: #A6FFD4;
     --nav-progress: linear-gradient(to right, #A1D3FF, #A6FFD4);
     --nav-progress-baground: #3c5d4d;
+    --text-color-current: #A6FFD4;
     /* Nav */
 
     /* header */
@@ -34,26 +36,31 @@ body{
     /* Main */
     --baground-color: rgba(255, 166, 182, 0.24);
     --main-text-color: #000;
+    --linje-text-adskiller: #ffa6b667;
     /* Main */
 
     /* Kontakt */
     --kontakt-bagrund: #53806A;
     --kontakt-text-color: #fff;
     --kontakt-baground-some: #80535B;
-    --kontakt-placeholder-form-text-color: #ffffff;
+    --kontakt-placeholder-form-text-color: #626262;
     --kontakt-submit-button: #FFA6B7;
     --Placeholder-not-filled: red;
     /* Kontakt */
+    
+    /* Spilleside */
+    --terning-text-color: #fff;
+    --karakter_outline: #53806A ;
+    /* Spilleside */
 
     /* Klasser */
-    --klasser-aktiv: violet; 
+    --klasser-aktiv: #A6FFD4; 
     /* Klasser */
-
 
     /* Knapper */
-    --forklare-knap: #A1D3FF;
-    --forklare-knap-hover: #A1D3FF;
-    --forklar-knap-tekst-color:rgb(163, 76, 76);
+    --forklare-knap: #53806A;
+    --forklare-knap-hover: #3c5d4d;
+    --forklar-knap-tekst-color:rgb(255, 255, 255);
     --videre-knap: #ffa6b6;
     --videre-knap-hover: #ffa8b8;
     /* Knapper */
@@ -68,6 +75,11 @@ body{
     --footer-color: #fff;
     /* Footer */
 
+    /* Popup */
+    --popup_baground-color: #616161;
+    --X-color: #fff;
+    --popup-text-color: #fff;
+    /* Popup */
 }
 
 /* Navbar Start*/
@@ -129,7 +141,7 @@ nav{
     position: fixed;
 
     /* Hvor den skal ligge */
-    transition: left ease 1s;
+    transition: left ease 0.5s;
     top: 0;
     left: 100%;
 }
@@ -216,6 +228,17 @@ nav{
     transition: width 0.1s;
 }
 /* User journey Slut*/
+
+/* Displays current nav-place */
+.Current_nav{
+    /* Important for overright andet */
+    color: var(--text-color-current) !important;
+}
+.Current_nav a{
+    color: var(--text-color-current) !important;
+    border-bottom: 2px solid var(--text-color-current);
+}
+/* Displays current nav-place */
   
 /* Navbar Slut*/
 
@@ -233,7 +256,7 @@ header{
     width: 100%;
     height: 100%;
     padding: 25vh 0 0 10px;
-    background: var(--gradiant-overlay) ,url(img/Cover.png);
+    background: var(--gradiant-overlay) ,url(img/Cover.webp);
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
@@ -255,11 +278,17 @@ header{
 }
 
 .header_underside{
-    padding: 20vh 0 0 10px;
-    background: var(--gradiant-overlay) ,url(img/Cover.png);
+    padding: 20vh 0 0 30px;
+    background: var(--gradiant-overlay) ,url(img/Cover.webp);
     background-size: cover;
     background-repeat: no-repeat;
     height: 40vh;
+}
+.headerimg_underside h1{
+    font-size: 2em;
+}
+.headerimg h1{
+    font-size: 2em;
 }
 
 @keyframes jump {
@@ -277,6 +306,12 @@ header{
 }
 
 @media screen and (min-width: 600px) {
+    .headerimg_underside h1{
+        font-size: 3.5em;
+    }
+    .headerimg h1{
+        font-size: 3.5em;
+    }
     .headerimg, .header_underside{
         background: var(--gradiant-overlay) ,url(img/cover_pc.webp);
         background-size: cover;
@@ -295,11 +330,23 @@ main{
 }
 section{
     width: 100%;
-    padding: 10px;
+    padding: 30px;
+    padding-bottom: 50px;
+
+}
+.content_overskrift{
+    margin: 20px 0;
+    padding-bottom: 5px;
+    border-bottom: 3px solid var(--linje-text-adskiller);
 }
 .images{
     position: relative;
-    width: 100%;
+    width: clamp(200px, 100%, 550px );
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
 }
 .images img{
     width: 100%;
@@ -315,6 +362,8 @@ section{
     gap: 20px;
 }
 .forklare_knap{
+    min-width: 200px;
+    text-align: center;
     border-radius: 6px;
     padding: 10px;
     background: var(--forklare-knap);
@@ -345,7 +394,6 @@ section{
     padding: 10px;
 }
 
-
 /* Guide */
 .guide{
     display: flex;
@@ -355,6 +403,8 @@ section{
     height: fit-content;
     display: flex;
     flex-direction: column;
+    border-radius: 6px;
+    margin: 30px;
 }
 .guide_list{
     padding-left: 20px;
@@ -370,35 +420,49 @@ section{
 .pink_bagrund{
     background: var(--baground-color);
 }
-
+.forklare_overskrift{
+    margin: 20px 0 10px 0;
+}
 /* videre Knap */
 .knap{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding: 40px;
+    gap: 20px;
 }
 .knap a{
-    padding: 20px;
+    padding: 10px;
     color: var(--main-text-color);
     text-decoration: none;
     background: var(--videre-knap);
     border-radius: 6px;
     font-weight: 600;
     transition: 0.5s;
+    text-align: center;
+    width: 200px;
 }
 .knap a:hover{
     transition: 0.5s;
     background: var(--videre-knap-hover);
 }
 /* videre Knap */
+@media screen and (min-width: 550px){
+    .knap{
+        flex-direction: row;
+    }
+}
 
 @media screen and (min-width: 700px){
+    .knap a{
+        padding: 20px;
+    }
     /* Guide */
     .guide{
         margin-top: 10px;
     }
     .guide_text{
-        border-radius: 6px;
         width: 70%;
     }
     .guide_side_img{
@@ -406,6 +470,7 @@ section{
         justify-content: center;
         width: 30%;
         padding: 10px;
+        margin: 30px 0;
 
     }
     .guide_side_img img{
@@ -422,6 +487,7 @@ section{
     }
     .divider{
         display: flex;
+        align-items: center;
         gap: 20px;
     }
     .images{
@@ -434,6 +500,10 @@ section{
         width: 50%;
         margin: 0;
     }
+    .main_text{
+        padding-bottom: 30px;
+        border-bottom: 3px solid var(--linje-text-adskiller);
+    }
     .main_text h2{
         margin-bottom: 10px;
         width: 75%;
@@ -444,6 +514,27 @@ section{
 
     .column_2{
         column-count: 2;
+    }
+
+    .forklarings_knapper{
+        flex-direction: column;
+        justify-content: space-evenly;
+        width: fit-content;
+        padding-top: 100px;
+        gap: 5px;
+    }
+
+    .forklare_overskrift{
+        display: none;
+    }
+    .forviret{
+        background: url(img/Perfekt\ bob.png);
+        background-repeat: no-repeat;
+        background-position: right;
+        min-height: 232px;
+    }
+    .forklarings_knapper a{
+        width: fit-content;
     }
 }
 
@@ -460,9 +551,6 @@ section{
     .forviret h3{
         text-align: center;
     }
-    .forklarings_knapper{
-        justify-content: space-evenly;
-    }
 
     /* Guide */
     .guide_text{
@@ -474,6 +562,11 @@ section{
     }
     /* Guide */
 }
+@media screen and (min-width: 1120px){
+    .forklarings_knapper{
+        padding: 0;
+    }
+}
 
 /* byg din karakter Start*/
  
@@ -484,29 +577,32 @@ section{
 .klasser{
     display: grid;
     gap: 10px;
-    grid-template-areas: 
-    "Barbarian Bard Cleric Druid"
-    "Fighter Monk Paladin Ranger"
-    "rogue Sorcerer Warlock Wizard"
-    ;
+    padding-bottom: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+
 }
-.klasser img{
-    max-width: 100px;
-    height: auto;
+.ikon{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+
+    /* flex: 1 0 70px;
+    max-width: 70px; */
+}
+.ikon img{
+    width: 100%;
+    padding: 5px;
 }
 .klasser .ikon{
     min-width: 50px;
     background-color: #fff;
     border-radius: 6px;
-    padding: 20px 10px 10px 10px;
     text-align: center; 
     cursor: pointer;
     transition: 0.5s;
 }
-.klasser .ikon:hover{
-    background-color:#ffa6b6;
-}
-.klasser .ikon a p{
+.klasser .ikon p{
     font-weight: 600;
     letter-spacing: 0.5px;
 }
@@ -521,27 +617,278 @@ section{
 .karakter_indhold p{
     padding-bottom: 25px;
 }
+.bygkarakter_overskrift{
+    padding: 0 0 10px 0;
+}
+.bob{
+    background: #ffffff00 url(img/Perfekt\ bob\ uden\ tale.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@media screen and (min-width:375px){
+    .klasser .ikon{
+        padding: 10px;
+    }
+    .ikon img{
+        padding: 0;
+    }
+}
+@media screen and (min-width:530px){
+    .klasser{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    .bob{
+        display: none;
+    }
+}
 @media screen and (min-width:700px) {
+    .klasser .ikon:hover{
+        background-color:#ffa6b6;
+    }
     .karakter{
         display: flex;
         gap: 20px;
     }
-    
-    .ikon{
-       width: 75px;
+    .karakter div{
+        width: 100%;
     }
-    .klasser{
-        min-width: 400px;
+    .ikon img{
+        padding: 5px;
     }
+    .klasser .ikon{
+        padding: 10px 0;
+    }
+}
+@media screen and (min-width:900px){
+    .ikon img{
+        padding: 0;
+    }
+    .klasser .ikon{
+        padding: 10px;
+    }
+}
+
+
+/* byg din karakter slut*/
+
+/* Karakter ark start*/
+
+.karakterark_wrapper{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    max-width: 902px;
+}
+
+
+.karakterark_container h1{
+    font-family: "Cinzel Decorative", serif;
+    font-style: normal;
+    margin: 20px;
+    padding: 5px;
+    border: 2px solid black;
+
+}
+
+.karakter_kasse {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px;
+}
+
+.hp {
+    flex: 1;
+    margin-right: 20px;
+
+}
+
+.info {
+   gap: 15px;
+   text-align: center;
    
 }
 
-@media screen and ( min-width:1120px) {
-    .ikon{
-        width: 125px;
+.liste {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.karakter_kasse {
+    margin: 20px;
+    border: solid 2px var(--karakter_outline);
+    padding: 10px;
+}
+
+.label {
+    display: block;
+    margin-bottom: 1px;
+    font-size: 15px;
+    margin-top: 8px;
+    color: rgb(114, 114, 114);
+}
+
+.input-box {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* amor/initiative/speed */
+
+.basic_stats_container{
+    margin: 15px;
+    padding: 0px;
+    border: solid 2px var(--karakter_outline);
+}
+
+.big{
+    padding: 20px;
+    border: 1px solid #000000;
+    border-radius: 4px 4px 0px 0px ;
+    font-size: 20px;
+}
+
+.small{
+    padding: 6px;
+    border: 1px solid #000000;
+    border-radius: 0 0px 20px 20px;
+    font-size: 17px;
+}
+
+.basic_stats_container {
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.basic_stats_kasse {
+    background: #ffffff; 
+    padding: 8px; 
+    border: 1px solid #ccc; 
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Attack and spellcasting */
+
+.attack_spellcasting{
+    margin: 20px;
+    border: solid 2px var(--karakter_outline);
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+}
+
+.attack_spellcasting label{
+    font-size: 11px;
+}
+
+/* Attack and spellcasting */
+
+
+/* amor/initiative/speed */
+
+.boks-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.container{
+    margin: 20px;
+    padding: 10px;
+    border: solid 2px var(--karakter_outline);
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    background: radial-gradient(circle, transparent 70%, white 30%);
+}
+
+.circle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle.filled::after {
+    background: radial-gradient(circle, black 70%, white 30%);
+
+}
+
+
+.input-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000;
+    padding: 0 0 5px 5px;
+    border-radius: 4px;
+    width: 90%;
+}
+
+.skill-input-box{
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 5px;
+    margin-right: 10px;
+    width: 50px; /* Sætter en fast bredde i pixels */
+    font-size: 14px;
+    flex-shrink: 0; /* Forhindrer at input-boksen skrumper */
+}
+
+.input-box-skills:focus {
+    outline: none;
+    
+}
+
+.fixed-text {
+    font-size: 14px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 600px) {
+    .karakterark_wrapper {
+        flex-direction: row;
+    
+    }
+    .container{
+        width: 50%;
+        margin-left: 10px;
+    }
+    .input-container {
+        padding: 0 0 10px 15px;
+        border-radius: 4px;
+       
     }
 }
-/* byg din karakter slut*/
+
+/* Karakter Ark slut*/
 
 /* Vores Vision start*/
 
@@ -581,10 +928,7 @@ section{
 }
 
 @media screen and (min-width: 800px) {
-   
-
-    .vision_container {
-        
+    .vision_container { 
         display: grid;
         grid-template-columns: 1fr 1fr; /* Two equal columns */
         grid-gap: 20px; /* Gap between the columns */
@@ -605,9 +949,6 @@ section{
         display: block; /* Remove any extra spacing */
         margin: 0 auto; /* Center the image within its container */
     }
-
-
-
 }
 
 @media screen and (max-width: 800px) {
@@ -615,13 +956,103 @@ section{
     display: none;
 }
 
-
 }
 .vision_foot_content{
     padding: 30px;
 }
 /* Vores Vision slut*/
 
+/* spilleside start*/
+.terninger{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px 0;
+    gap: 10px;
+}
+.terning{
+    position: relative;
+    padding: 0 0px;
+    cursor: pointer;
+}
+.terning p{ 
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--terning-text-color);
+    font-weight: 600;
+    padding-bottom: 5px;
+    font-size: 1.5em;
+    transition: ease-in-out 0.5s;
+}
+.terning img{
+    width: 100px;
+    transition:ease-in-out 0.5;
+}
+.terning_overskrift{
+    border-bottom: 3px solid var(--linje-text-adskiller);
+}
+
+.spilside_bund{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.spilside_buttom{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.Buttom_img video{
+    width: 100%;
+    border-radius: 6px;
+}
+@media screen and (min-width: 520px){
+    .terning{
+        padding: 0 10px;
+    }
+    .terninger{
+        padding: 30px;
+        gap: 20px;
+    }
+}
+
+@media screen and (min-width: 700px){
+    .terning img{
+        width: 150px;
+    }
+
+    .spilside_buttom{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    .Buttom_img, .Buttom_tekst{
+        width: 50%;
+    }
+
+    .spilside_top div{
+        display: flex;
+        gap: 20px;
+    }
+    .spilside_top div p{
+        width: 50%;
+    }
+}
+@media screen and (min-width: 980px){
+    .terning{
+        margin: 0 20px;
+    }
+}
+@media screen and (min-width: 1240px){
+    .terning{
+        margin: 0;
+    }
+}
+/* spilleside slut*/
 /* Kontakt start*/
 .kontaktside{
     height: fit-content;
@@ -773,6 +1204,46 @@ footer{
         /* footer */
 }
 /* footer */
+
+/* Popup start*/
+.popup{
+    position: fixed;
+    height: fit-content;
+    width: 80vw;
+    background: var(--popup_baground-color);
+    z-index: 5;
+    padding: 20px;
+
+    top: 150%; /* Gå til 50% */
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    transition: 1s;
+    border-radius: 6px;
+}
+.popup h1{
+    color: var(--popup-text-color);
+    letter-spacing: 1px;
+}
+.popup svg{
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 6;
+}
+.popup svg path{
+    fill: none;
+    stroke: var(--X-color);
+    stroke-miterlimit: 10;
+    stroke-width: 4px;
+}
+.popup video{
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 6px;
+}
+/* Popup slut*/
 
 /* Stop */
 /* Mest for text */
