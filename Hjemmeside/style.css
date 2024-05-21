@@ -348,7 +348,7 @@ section{
     justify-content: center;
     margin: 20px 0;
 }
-.images img{
+.images img, video{
     width: 100%;
     border-radius: 6px;
 }
@@ -1006,7 +1006,7 @@ section{
     gap: 20px;
 }
 
-.Buttom_img video{
+.Buttom_img img{
     width: 100%;
     border-radius: 6px;
 }
