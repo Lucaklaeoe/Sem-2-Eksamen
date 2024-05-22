@@ -1258,8 +1258,9 @@ footer{
     transition: 1s;
     border-radius: 6px;
 }
-.popup h1{
+.popup h2{
     color: var(--popup-text-color);
+    font-size: 2em;
     letter-spacing: 1px;
 }
 .popup svg{
