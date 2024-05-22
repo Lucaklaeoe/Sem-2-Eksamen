@@ -1,7 +1,6 @@
 RewriteEngine On
 RewriteCond %{HTTP_HOST} ^lucakl\.dk [NC]
-RewriteRule ^(.*)$ https://www.lucakl.dk/$1 [L,R=301]
-
+RewriteRule ^$ https://www.lucakl.dk/index.html [L,R=301]
 
 # Allow CORS from www.lectio.dk
 <IfModule mod_headers.c>
