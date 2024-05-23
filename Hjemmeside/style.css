@@ -1004,7 +1004,6 @@ section{
 }
 .terning p{ 
     position: absolute;
-    text-align: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -1089,6 +1088,10 @@ section{
     .terning{
         margin: 0;
     }
+}
+.terning_navn{
+    top: 100% !important;
+    color: var(--main-text-color) !important;
 }
 /* spilleside slut*/
 /* Kontakt start*/
