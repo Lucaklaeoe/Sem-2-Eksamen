@@ -1,4 +1,5 @@
 Gruppe: Bjørn, Ghadir, Gro og Luca
+Github er brugt som det primære værktøj til deling af filer.
 
 Denne fil vil forklare mappestrukturen i vores github repositori på en visuel måde,
 Samt give en genneral ide om hvad mappen indeholder.
@@ -52,7 +53,7 @@ For ydeligere forklaring af specifik kode --> Se kommentare i den specifikke kod
 
 
 - img  - - - - - - - - - - - - - - - - - - - - - Samlet billeder lavet til projektet (nogle bruges ikke)
-	-- Classes				 Classe ikoner 
+	-- Classes				 Klasse ikoner 
 	-- terning frames  - - - - - - - - - - - Få terninger
 	-- video png				 Billeder til video
 
