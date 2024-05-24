@@ -1,0 +1,79 @@
+Gruppe: Bjørn, Ghadir, Gro og Luca
+Github er brugt som det primære værktøj til deling af filer.
+
+Denne fil vil forklare mappestrukturen i vores github repositori på en visuel måde,
+Samt give en genneral ide om hvad mappen indeholder.
+
+For ydeligere forklaring af specifik kode --> Se kommentare i den specifikke kode fil.
+
+
+- Bob frames - - - - - - - - - - - - - - - - - - Maskotens eksportetret png frames
+	-- Adobe Primere Pro Auto-Save		 Autosaves fra "DM" PrPro filen
+ 
+
+- Bobvideo - - - - - - - - - - - - - - - - - - - Gennerale PrPro filer - test eksports, PrPro filer
+	-- Adobe After Eftects Auto-Save	 Autosave fra Terning rul
+	-- Adobe Premere Pro Auto-Save - - - - - Autosave fra PrPro genneral filer
+	-- Finals and downsized			 Endelige eksportet & nedskaleret videor
+
+- Bobvoice - - - - - - - - - - - - - - - - - - - Ai stemmen til maskoten (englsk ord)
+	-- Ai voice for bob			 Ai stemme lyd fil (Rå download)
+		--- Convertet  - - - - - - - - - Ai stemme lyd fil (mp3 convert)
+
+
+- Brainstorms - - - - - - - - - - - - - - - - -  Brainstorms fra draw.io
+
+
+(kig lige igennem for ændringer)
+- Dokumentation  - - - - - - - - - - - - - - - - Alle filer til dokumentationen (InDesign filen her)
+	-- Bob 					 Illustrator versioner af bob
+	-- figma - - - - - - - - - - - - - - - - Figma billeder specifik til dokumentation
+	-- Ikoner				 Gennerale ikoner lavet af os
+		--- Classes  - - - - - - - - - - Classe ikoner fra hjemmesiden
+		--- racer			 Race ikoner fra hjemmesiden
+		--- Socials  - - - - - - - - - - Sociale ikoner fra hjemmesiden
+	-- Logo					 Gennerale logoer (vores logo)
+		--- Andre logoer - - - - - - - - Logoer fra andre kilder vi har brugt
+	-- Logo udkast				 Vores logo ukast til egen logo
+	-- Minified broken - - - - - - - - - - - Eksempler på minified ikke virker korrekt
+	-- Sketches og storyboard 		 Sketches og storyboards
+
+
+- Hjemmeside - - - - - - - - - - - - - - - - - - Alle filer til hjemmesiden (koden her)
+	-- forklarings_videoer			 De færdie videoer til hjemmesiden
+	-- iconer  - - - - - - - - - - - - - - - Gennerale ikoner til hjemmesiden
+		--- Classes 			 Classe ikoner til hjemmesiden
+		--- racer  - - - - - - - - - - - Race ikoner til hjemmesiden
+	-- img					 Gennerale billeder til hjemmesiden
+	-- sammenarbejdspartnere - - - - - - - - Logoer fra andre grupper (for SEO)
+	-- terninger				 Billeder af terninger til hjemmesiden
+
+
+- Illustrator  - - - - - - - - - - - - - - - - - Alle Illustrator filer lavet til projektet
+
+
+- img  - - - - - - - - - - - - - - - - - - - - - Samlet billeder lavet til projektet (nogle bruges ikke)
+	-- Classes				 Klasse ikoner 
+	-- terning frames  - - - - - - - - - - - Få terninger
+	-- video png				 Billeder til video
+
+
+- Logo - - - - - - - - - - - - - - - - - - - - - Eksporetret/Endelige logo
+
+
+- Photoshop folder - - - - - - - - - - - - - - - Alle Photoshop filer lavet til projektet
+
+
+- Sfx lyde - - - - - - - - - - - - - - - - - - - Lydeffekter til videoerne
+
+
+- Sketches og Storyboard - - - - - - - - - - - - Sketches og Storyboard fra figma
+
+
+
+
+
+
+
+
+	
