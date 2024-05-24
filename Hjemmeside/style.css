@@ -405,13 +405,22 @@ section{
     flex-direction: column;
     border-radius: 6px;
     margin: 30px;
+    position: relative;
 }
+.guide_text img{
+    width: 50px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
 .guide_list{
     padding-left: 20px;
 }
 .guide_side_img, .guide_side_empty{
-    display: none;
+   display: none;
 }
+
 .main_content{
     margin-bottom: 10px;
 }
@@ -452,6 +461,7 @@ section{
     .knap{
         flex-direction: row;
     }
+    
 }
 
 @media screen and (min-width: 700px){
@@ -476,6 +486,10 @@ section{
     .guide_side_img img{
         max-height: 242px;
     }
+    .guide_text img{
+        display: none;
+     }
+ }
     /* Guide */
 
     .forklare_knap{
