@@ -3,6 +3,7 @@ var burgerbar = true;
 const navbar_icon = document.getElementById("navbar_icon");
 const nav_liste = document.getElementById("nav_liste");
 const navbar = document.getElementById("navbar");
+//Funktion til at åbne navbaren
 function chance_navbar(){
     if(burgerbar){
         //burgerbar opens
@@ -15,18 +16,21 @@ function chance_navbar(){
         nav_liste.style.left = '100%';
     }
     burgerbar = !burgerbar;
-}
+};
 
+//onscroll funktion variabler
 var oldScroll;
 const progressbar = document.getElementById("progressbar");
 const progress = document.getElementById("progress");
 const arrow = document.getElementById("arrow");
+//onscroll funktion
 window.onscroll = function() {
     //hvis gemte scroll er højrer end nuværende scroll
-    //scroll up                bliver nede hvis du er i toppen
+    //     scroll up           bliver nede hvis du er i toppen
     if(oldScroll > scrollY || scrollY < 60){
         navbar.style.top = "0px";
 
+        //hvis der findes progressbar
         if(progressbar){
             progressbar.style.top = "69px";
         }
@@ -35,40 +39,47 @@ window.onscroll = function() {
     else{
         navbar.style.top = "-70px";
 
+        //hvis der findes progressbar
         if(progressbar){
             progressbar.style.top = "0px";
         }
     };
+    //gem tidliger escroll value
     oldScroll = scrollY;
+
+    //opdater længen på progressbar - hvis den findes
     if(progressbar){
-        //User journey progress bar, when scroll
         progress.style.width = Math.round((scrollY / (document.body.scrollHeight - window.innerHeight)) * 100) + "%";
     };
-    //lukker navbar hvis den er åben
+
+    //lukker navbar hvis den er åben og der scolles (uanset vej)
     if(!burgerbar){
         chance_navbar();
     };
     
-    //remove arrow
+    //fjerne pilen hvis du er under 500px og den findes og du scroller
     if(scrollY >= 500 && arrow){
-        //ændre farve istedet for display for at lave det smooth
+        //ændre farve istedet for display: none for at få den til at fade
         arrow.style.color = "#ffffff00";
     };
 };
 
+//Klikkes på pilen
 function scrollPage() {
     window.scrollBy({
         top: 600,
         behavior: 'smooth'
     });
-}
+};
 
 //kode til Race beskrivelse
+//variabler
 const race_tekst = document.getElementById("race_tekst");
 const race_overskrift = document.getElementById("race_overskrift");
 var gammel_tekst;
- //tekst swap ved racer herunder
+//tekst swap ved racer herunder
 function swapText2(newText) {
+    //indtager en variable
     //ændrer tekst
 
     if(newText == "reset" || newText == gammel_tekst){
@@ -108,30 +119,32 @@ function swapText2(newText) {
     else if (newText == "Halv_Ork") {
         race_overskrift.innerText="Halv Ork ";
         race_tekst.innerHTML="<b>Evneniveau:</b> Din styrke stiger med 2, og din Udholdenhed stiger med 1.<br><b>Alder:</b> Halv-orker modnes hurtigere end mennesker og lever sjældent over 75 år.<br><b>Størrelse:</b> Lidt større og kraftigere end mennesker, 5 til over 6 fod høj. Du er Medium.<br><b>Hastighed:</b> Din basis ganghastighed er 30 fod.<br><b>Mørkesyn:</b> Overlegen syn i mørke og svagt oplyste områder.<br><b>Truende:</b> Dygtig i intimidation.<br><b>Urokkelig Udholdenhed:</b> Ved at falde til 0 hit points kan du i stedet falde til 1 hit point, men kun en gang før en lang hvile.<br><b>Voldsomme Angreb:</b> Ved et kritisk slag med et melee våben kan du kaste en ekstra skadeterning.<br><b>Sprog:</b> Udover Common, taler, læser og skriver du Ork. Ork er barsk og skrives på dværgisk skrift."; 
-    }
-;
+    };
 
-    //tilføjer aktiv + fjerner aktiv
+    //tilføjer aktiv + fjerner aktiv class
     document.getElementById(newText).classList += " active";
     if(gammel_tekst){
         document.getElementById(gammel_tekst).classList = "ikon " + gammel_tekst;
-    }
+    };
 
-    // gemmer original id
+    // gemmer original id hvis de ikke er ens
     if (newText != gammel_tekst){
         gammel_tekst = newText;
     } 
+    //ellers slet
     else{
         gammel_tekst = null;
-    }
-}
-//race tekst swap slut
+    };
+};
+
 //kode til klasse beskrivelse
+//variabler
 const tekst = document.getElementById("class_tekst");
 const overskrift = document.getElementById("class_overskrift");
 var oldtext;
- //tekst swap ved klasser herunder
+//tekst swap ved klasser herunder
 function swapText(newText) {
+    
     //ændrer tekst
     if (newText == oldtext){
         overskrift.innerText="Hvad er classes?";
@@ -140,7 +153,6 @@ function swapText(newText) {
     else if(newText == "reset"){
         overskrift.innerText = "Hvad er classes?";
         tekst.innerText="Det, der er vigtigst for din karakter, er hvilken klasser du vælger. En class er en slags arbejde, din karakter har. Din class bestemmer, hvilke evner du kan have. Det kan være alt fra at slå ekstra hårdt til være usynlig."; 
-    
     }
     else if (newText == "Barbarian") {
         overskrift.innerText="Barbarian";
@@ -166,7 +178,6 @@ function swapText(newText) {
         overskrift.innerText="Munk";
         tekst.innerHTML="<b>Hit Points:</b> 1d8 per niveau (+Udholdenhed modifikator).<br><b>Rustning og våben:</b> Ingen rustning, simple våben, kortsværd; vælg et værktøj til kunst eller et musikinstrument. Vælg to færdigheder. <br><b>Udstyr:</b> Kortsværd eller ethvert simpelt våben, fangekælderpakke eller opdagelsespakke, 10 dartpile. <br><b>Urustet</b> Forsvar: AC = 10 + Fingerfærdighed modifikator + Visdom modifikator uden rustning eller skjold. <br><b>Martial Arts:</b> Brug fingerfærdighed for angrebs- og skadedrulninger med umvæbne slag og munkekamps-våben; kast d4 for væbne slag eller munkekamps-våben skade; udfør bonusaktion umvæbent slag efter Angrebsaktion. <br><b>Ki:</b> Få ki-punkter til munkefunktioner, startende med Storm af Slag, Tålmodig Forsvar og Vinden Trin; genvind efter kort eller lang hvile. <br><b>Urustet Bevægelse:</b> Hastighed +10 ft. uden rustning eller skjold; får yderligere bonusser på højere niveauer. <br><b>Afbøje Missiler:</b> Brug reaktion til at reducere skade fra fjernvåbenangreb; kan fange og kaste tilbage missil hvis skaden reduceres til 0. <br><b>Forbedring af Evner:</b> Øg evnepoint på visse niveauer, kan ikke overstige 20. <br><b>Langsom Fald:</b> Reducer faldskade med munkeniveau x 5 som reaktion på 4. niveau.<br><b>Ekstra Angreb:</b> Angrib to gange, når du udfører Angrebsaktionen på 5. niveau.<br><b>Forbløffende Slag:</b> Brug 1 ki-punkt på hit for at forsøge forbløffende slag, der forårsager Udholdenheds-redning eller forbløffende effekt på 5. niveau."; 
     }
-
     else if (newText == "Paladin") {
         overskrift.innerText="Paladin";
         tekst.innerHTML="<b>Hitterninger:</b> 1d10 pr. niveau. 1. niveau: 10 + Udholdenhedsmodifikator. For højere niveauer: 1d10 (eller 6) + Udholdenhedsmodifikator pr. niveau efter 1.<br><b>Kompetencer:</b> Alle panser og skjolde. Simpelt og martial våben. Vælg <b>2</b> færdigheder fra atletik, indsigt, intimidering, medicin, overtalelse og religion. <br><b>Udstyr:</b> Ringbrynje, helligt symbol. <br>Vælg: <b>(a)</b> kampvåben og skjold eller <b>(b)</b> to kampvåben. <br>Vælg: <b>(a)</b> fem spydkast eller <b>(b)</b> et simpelt nærkampsvåben. <br>Vælg: <b>(a)</b> præstens pakke eller <b>(b)</b> opdagelsesrejsendes pakke. <br><b>Guddommelig Sans:</b> Fornem himmelsk, djævel eller u-døde inden for 60 fod. <b>Anvendelse:</b> 1 + Charisma modifier, genvundet efter lang hvile.<br><b>Læg på Hænder:</b> Helbred væsener eller neutraliser gift og sygdomme.<br><b>Kampstil:</b> Forsvar: +1 AC med rustning. Duellering: +2 skader med enhånds nærkampsvåben. <br><b>Great Weapon Fighting:</b> Reroll 1 eller 2 på skades-terning med tohånds nærkampsvåben.<br><b> Beskyttelse:</b> Ulempe ved angreb mod mål inden for 5 fod, skal bære skjold. <br><b>Spellcasting:</b> Besværgelser forberedt: Charisma modifier + halvt paladin niveau. Spellcasting evne: Karisma. Spell save DC: 8 + færdighedsbonus + Charisma modifier. <br><b>Det Guddommelige Slag:</b> Ekstra strålende skade med nærkampsvåbenangreb.<br><b>Guddommelig Sundhed:</b> Immunitet mod sygdom.<br><b>Channel Divinity:</b> Brug guddommelig energi til magiske effekter. <br><b>Forbedring af Evnescore:</b> Øg evnescore med 2 eller to med 1, maksimalt 20.<br>Ekstra Angreb: Angreb to gange med angrebshandling."; 
@@ -179,7 +190,6 @@ function swapText(newText) {
         overskrift.innerText="Rogue";
         tekst.innerHTML="<b>Hitterninger:</b> 1d8/niveau. Start HP: 8 + Con modifier. Højere niveauer: 1d8 (eller 5) + Udholdenhed modifikator/niveau efter 1. <br><b>Panser:</b> Let. <br> Våben: Simpelt, armbrøst, langsværd, gribere, kortsværd. <br><b>Færdigheder:</b> Vælg 4 fra Akrobatik, Atletik, Bedrag, Indsigt, Intimidation, Efterforskning, Perception, Præstation, Overtalelse, Sleight of Hand, Stealth. <br><b>Udstyr:</b> Læderrustning, to dolke, tyveværktøj. <br> Vælg: <b>(a)</b> griber eller <b>(b)</b> kortsværd. <br>Vælg: <B>(a)</b> kortbue og kogger med 20 pile eller <b>(b)</b> kortsværd. <br>Vælg: <b>(a)</b> indbrudstyvspakke, <B>(b)</b> dungeoneer-pakke eller <b>(c)</b> opdagelsesrejsendes pack. <br><b>Ekspertise:</b> Vælg 2 færdigheder eller 1 færdighed og tyvenes værktøjer; dobbelt færdighedsbonus for udvalgte færdigheder. <br><b>Snig angreb:</b> Ekstra 1d6 skade én gang pr. tur, hvis du har fordel på angrebsrullen eller en fjende er inden for 5 fod uden ulemper.<br><b>Tyvenes cant:</b> Hemmeligt sprog og tegn til skjulte beskeder.<br> Udspekuleret handling: Start på 2. niveau, brug bonushandling til at Dash, Disengage eller Hide.<br>       <b>Forbedring af evnescore:</b> Niveauer 4, 8, 10, 12, 16, 19: Øg evnescore eller få en bedrift. <br><b>Uncanny Dodge:</b> Start på 5. niveau, halver skade fra en angriber, du kan se, med en reaktion."; 
     }
-  
     else if (newText == "Sorcerer") {
         overskrift.innerText="Sorcerer";
         tekst.innerHTML="<b>Hitterninger:</b> 1d6/niveau. Start HP: 6 + Udholdenhed modifier.<br> Højere niveauer: 1d6 (eller 4) + Con modifier/niveau efter 1. <br><b>Rustning:</b> Ingen. <br><b>Våben:</b> Dolke, dartpile, slynger, kvartstave, lette armbrøster. <br><b>Sparekast:</b> Con, Cha. Vælg 2 færdigheder fra Arcana, Bedrag, Indsigt, Intimidation, Overtalelse, Religion.<br> <b>Udstyr:</b> To dolke. <br>Vælg: <b>(a)</b> let armbrøst og 20 bolte eller <b>(b)</b> et hvilket som helst simpelt våben. <br>Vælg: <b>(a)</b> komponentpose eller <b>(b)</b> mystisk fokus. <br>Vælg: <b>(a)</b> dungeoneer's pack eller <b>(b)</b> explorer's pack. <br>Spellcasting: Kend 4 cantrips på 1. niveau. Genvind spell slots efter lang hvile. Kend 2 besværgelser på 1. niveau, lær flere senere. <br><b>Evne:</b> Karisma; spell save DC = 8 + færdighedsbonus + karisma modifier; spell attack modifikator = færdighedsbonus + karisma modifikator. <b>Fokus</b>: Arkan fokus.<br><b>Font of Magic:</b> 2 trolddomspoint, genvind efter lang hvile. <br><b>Fleksibel støbning:</b> Brug trolddomspoint til at oprette trylleformularslots eller ofre trylleformularslots for at få trolddomspoint.<br><b>Meta magi:</b> Gevinst på 3. niveau. Vælg 2 muligheder, få flere senere. Kan bruge én Metamagic-indstilling pr. besværgelseskast. <br><b>Twinned Spell:</b> Brug trolddomspoint svarende til stav eniveau for at målrette mod et andet væsen med samme magi."; 
@@ -197,42 +207,57 @@ function swapText(newText) {
     document.getElementById(newText).classList += " active";
     if(oldtext){
         document.getElementById(oldtext).classList = "ikon " + oldtext;
-    }
+    };
 
-    // gemmer original id
+    // gemmer original id hvis de ikke er ens
     if (newText != oldtext){
         oldtext = newText;
     } 
+    //ellers fjern
     else{
         oldtext = null;
-    }
-}
-//tekst til klasser slut
+    };
+};
 
-
-//Terninger
+//Terninger rolls
 function Rolldice(dice){
+    //indtager en terning og finder
     const the_dice = document.getElementById(dice)
     const dice_img = document.getElementById(dice + 'dice');
+
+    //finder et tilfældigt tal for den specifike terning
+    //              Fjerne kommatil - Tag tilfældigt tal fra dice lig en til da den ellers starter på 0
+    //                    Spilt() = Tag lokale variable "dice" spilt ved D og tag child 1 (tallet)
     const randomnumber = Math.floor(Math.random() * dice.split("D")[1] + 1);
+
+    //Fjern text
     the_dice.style.transform = "translate(-50%, -50%) scale(0)";
+
+    //roter dice
     dice_img.style.transition = "ease-in-out 1s";
     dice_img.style.transform = 'rotate(360deg)';
 
+    //efter 1000 (1 sek) tid
     setTimeout(function(){
+        //ændre tal og få det frem igen
         the_dice.textContent = randomnumber;
         the_dice.style.transform = "translate(-50%, -50%) scale(1)";
 
+        //få terning tilbage til 0 grader uden at rotere
+        //reset terning
         dice_img.style.transition = "0s";
         dice_img.style.transform = 'rotate(0deg)';
     }, 1000)
 };
 
 //popup
+//varabler
 const video_element = document.getElementById("video");
 const popup_element = document.getElementById("popup");
 const popup_overskrift = document.getElementById("popup_overskrift");
+//funktion indtager video src'en og en overskrift
 function popup(video, overskrift){
+    //hvis video er reset så fjern popuppen
     if(video == "reset"){
         popup_element.style.top = "150%";
         video_element.setAttribute("src", null);
@@ -244,21 +269,23 @@ function popup(video, overskrift){
         popup_element.style.top = "50%";
         popup_overskrift.innerText = overskrift;
 
-        //set autoplay efter animation
+        //set autoplay efter popup er kommet op
         setTimeout(function(){
             video_element.setAttribute("autoplay","autoplay");
             video_element.load();
         },1500);
-    }
+    };
 };
 
 
 //kontakt formular
+//variabler
 const Navn = document.getElementById("Navn");
 const Email = document.getElementById("Email");
 const Besked = document.getElementById("Besked");
 const info = document.getElementById("info");
 
+//hvis kontaktformular findes
 if(Navn){
     (function() {
         //https://dashboard.emailjs.com/admin/account
@@ -271,28 +298,37 @@ if(Navn){
         document.getElementById('contact-form').addEventListener('submit', function(event) {
             event.preventDefault();       
 
+            //Hvis alle felter er udfyldt
             if(Navn.value != "" && Email.value != "" && Besked.value != ""){
-            //Alle felter er udfyldt --> do this  
+                //send mailen 
                 emailjs.sendForm('service_kesfnw1', 'template_uvrhrpc', this).then(() => {
-                    //Removes the submit buttons funktion and the text in the input boxes
+                    //efter mailen er sendt fjerne funktionen fra submit knappen
                     document.getElementById("submit").setAttribute("type","Done");
+
                     //sæt formen til start
                     Navn.value = null;
                     Email.value = null;
                     Besked.value = null;
-                    //fjern deres class, hvis der var noget man ikke udfyldte
+
+                    //fjern deres rød farver, hvis der var noget man ikke udfyldte
                     Navn.classList = "";
                     Email.classList = "";
                     Besked.classList = "";
 
+                    //giv info om at mail er sendt
                     info.innerHTML = "Mail sendt!";
                     }, (error) => {
+                        //hvis der er fejl giv en fejl i consolen
                         console.log('FAILED...', error);
+                        //giv bruger besked om at der var en fejl
                         info.innerHTML = "Fejl, prøv igen"; 
                 });
             } 
+            //hvis alt ikke var udfyldt
             else{
+                //start med at sige
                 var message_to_user = "Du mangler at udfylde følgende: ";
+                //tilføj og tjek om noget ikke er udfyldt
                 if(Navn.value == ""){
                     Navn.classList = "not_filled";
                     message_to_user += "<br> - Navn";
@@ -305,6 +341,7 @@ if(Navn){
                     Besked.classList = "not_filled";
                     message_to_user += "<br> - Besked";
                 };
+                //giv bruger besked om at de mangler at udfylde noget og hvad de mangler at udfylde
                 info.innerHTML = message_to_user;
             };
         });
@@ -322,44 +359,62 @@ save_data_points.forEach(data_point => {
 
 //funktionen for at gemme ændringerne
 function save_karaktarark_data(){
+    //gør variable klar til at gemme
     const data = {};
     const filled_data = {};
 
+    //for hver data som har class ".save_data"
     save_data_points.forEach(data_point => {
+        //tag data variable og giv en "overskrift" (elementets id) 
+        //sæt "overskriften" til værdigen (den udfyldte tekst af elementet)
         data[data_point.id] = data_point.value;
     });
 
+    //for hver data som har class ".circle"
     save_data_filled_dots.forEach(data_dots => {
+        //hvis elementet ikke "kun" har circle
         if(data_dots.classList != "circle"){
+            //så må den være fyldt
+
+            //lav overskrift om til elements id og sæt vædigen til true
             filled_data[data_dots.id] = true;
         }
         else{
+            //så må den være tom
+
+            //lav overskrift om til elements id og sæt vædigen til false            
             filled_data[data_dots.id] = false;
-        }
+        };
     });
 
     //vi bruger localstorage for at gemme 
-    //vi gemmer et object så vi skal bruge JSON.stringify
+    //vi gemmer et object så vi skal bruge JSON.stringify    gem de lokale variabler
     localStorage.setItem("prev_data_points", JSON.stringify(data));
     localStorage.setItem("prev_data_dots", JSON.stringify(filled_data));
 }
 
 //funktionen for at indlæse den gemte data
 function load_karakterark_data(){
+    //find localStorage som var gemt fra tidligere
     const saved_data = localStorage.getItem("prev_data_points");
     const saved_data_dots = localStorage.getItem("prev_data_dots");
 
-    //er der noget gemt data hvis ja indæls det
+    //er der noget gemt data hvis ja indlæs det
     if(saved_data != null || saved_data != undefined){
+        //for hver point
         save_data_points.forEach(data_point => {
+            //tag elementlistens værdig oversæt json data til forståelig javascript data og tag "overskriften" som matcher elements id
             data_point.value = JSON.parse(saved_data)[data_point.id]
         });
-    };
 
-    save_data_filled_dots.forEach(data_dots => {
-        if(JSON.parse(saved_data_dots)[data_dots.id]){
-            data_dots.classList = "circle filled";
-        };
-    });
+        //for hver dot
+        save_data_filled_dots.forEach(data_dots => {
+            //tag elementlistens og oversæt find overskriften der matcher med elements id og spørg om den er "true"
+            if(JSON.parse(saved_data_dots)[data_dots.id]){
+                //hvis den er true --> giv classen "filled"
+                data_dots.classList = "circle filled";
+            };
+        });
+    };
 };
 load_karakterark_data();
