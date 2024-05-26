@@ -6,8 +6,8 @@ Samt give en genneral ide om hvad mappen indeholder.
 
 For ydeligere forklaring af specifik kode --> Se kommentare i den specifikke kode fil.
 
-- aflevering - - - - - - - - - - - - - - - - - - - Den endelige PDF aflevering
-	-- Bilag			Bilags PDF'er mm.
+- aflevering - - - - - - - - - - - - - - - - - - Den endelige PDF aflevering
+	-- Bilag			         Bilags PDF'er mm.
 
 
 - Bob frames - - - - - - - - - - - - - - - - - - Maskotens eksportetret png frames
@@ -28,9 +28,9 @@ For ydeligere forklaring af specifik kode --> Se kommentare i den specifikke kod
 
 
 - Dokumentation  - - - - - - - - - - - - - - - - Alle filer til dokumentationen (InDesign filen her)
-	--Bilag 			 PDF'er af bilag
-	-- Bob - - - - - - - - - - - - - - - - - - - - - - Illustrator versioner af bob
-	-- Brainstorms		         Brainstorms
+	-- Bilag 			         PDF'er af bilag
+	-- Bob - - - - - - - - - - - - - - - - - Illustrator versioner af bob
+	-- Brainstorms		                 Brainstorms
 	-- figma - - - - - - - - - - - - - - - - Figma billeder specifik til dokumentation
 	-- Ikoner				 Gennerale ikoner lavet af os
 		--- Classes  - - - - - - - - - - Classe ikoner fra hjemmesiden
