@@ -30,7 +30,7 @@ For ydeligere forklaring af specifik kode --> Se kommentare i den specifikke kod
 - Dokumentation  - - - - - - - - - - - - - - - - Alle filer til dokumentationen (InDesign filen her)
 	--Bilag 			 PDF'er af bilag
 	-- Bob - - - - - - - - - - - - - - - - - - - - - - Illustrator versioner af bob
-	-- Brainstorms		Brainstorms
+	-- Brainstorms		         Brainstorms
 	-- figma - - - - - - - - - - - - - - - - Figma billeder specifik til dokumentation
 	-- Ikoner				 Gennerale ikoner lavet af os
 		--- Classes  - - - - - - - - - - Classe ikoner fra hjemmesiden
