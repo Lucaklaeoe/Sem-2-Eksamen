@@ -43,6 +43,9 @@ For ydeligere forklaring af specifik kode --> Se kommentare i den specifikke kod
 	-- Sketches og storyboard 		 Sketches og storyboards
 
 
+- Fremlæggelse - - - - - - - - - - - - - - - - - Fremlæggelse materiale PP. mm.
+
+
 - Hjemmeside - - - - - - - - - - - - - - - - - - Alle filer til hjemmesiden (koden her)
 	-- forklarings_videoer			 De færdie videoer til hjemmesiden
 	-- iconer  - - - - - - - - - - - - - - - Gennerale ikoner til hjemmesiden
