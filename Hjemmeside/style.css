@@ -634,7 +634,7 @@ section{
     padding: 0 0 10px 0;
 }
 .bob{
-    background: #ffffff00 url(img/Perfekt\ bob\ uden\ tale.png);
+    background: #ffffff00 url(img/perfektbob.png);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -982,14 +982,15 @@ section{
     
     .vision_image_container {
         border-top: solid 10px var(--icon_baggrund);
-        grid-column: 2 / 3; /* Span from the second column to the third column */ 
         text-align: center; /* Center the image horizontally */
+        display: flex;
+        align-items: center;
     }
     
     .vision_image_container img {
         max-width: 100%; /* Ensure the image does not exceed its container */
         display: block; /* Remove any extra spacing */
-        margin: 0 auto; /* Center the image within its container */
+        border-radius: 6px;
     }
 }
 
