@@ -83,7 +83,7 @@ function swapText2(newText) {
     //ændrer tekst
 
     if(newText == "reset" || newText == gammel_tekst){
-        race_overskrift.innerText = "Hvad er classes?";
+        race_overskrift.innerText = "Racer";
        race_tekst.innerText="Der er flere racer at vælge imellem når man skal bygge en karakter. Det gør ofte ikke den store forskel hvilken race man vælger. Vi har valgt de mest normale. Hvis du er tvivl - så spørg din DM om hvilke racer I spiller med."; 
     
     }
